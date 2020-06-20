@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>sentinel</id>
+    <packageSourceUrl>https://github.com/nils-a/sentinel-chocolatey</packageSourceUrl>
+    <owners>nilsandresen</owners>
+    <version>0.13.4.0</version>
+    <title>sentinel log-viewer</title>
+    <authors>Ray Hayes</authors>
+    <copyright>Ray Hayes, 2009-2017</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/yarseyah/sentinel/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/yarseyah/sentinel/releases</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <iconUrl>https://raw.githubusercontent.com/yarseyah/sentinel/master/docs/Debug.png</iconUrl> -->
+    <description>Sentinel is a viewer for log-files - specifically designed to act as a network end-point for the likes of nLog and log4net, additionally it then works really well for capturing log entries from multiple sources.</description>
+    <summary>Log-file viewer for nLog and log4net</summary>
+    <tags>sentinel nlog log4net</tags>
+  </metadata>
+</package>
