@@ -1,0 +1,2 @@
+# smtp4dev-chocolatey
+This is a simple package to install [smtp4dev](https://github.com/rnwood/smtp4dev/) (in [version 2 - standanlone](https://github.com/rnwood/smtp4dev/releases/tag/v2.0.11)) for [chcoclatey](https://chocolatey.org/)
