@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>chainsaw</id>
+    <packageSourceUrl>https://github.com/nils-a/chainsaw-chocolatey</packageSourceUrl>
+    <owners>nilsandresen</owners>
+    <version>2.0.0</version>
+    <title>Apache Chainsaw</title>
+    <authors>Apache Software Foundation</authors>
+    <copyright>2002-2018</copyright>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://logging.apache.org/chainsaw/2.x/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Chainsaw v2 is a companion application to Log4j written by members of the Log4j development community. Like a number of Open Source projects, this new version was built upon inspirations, ideas and creations of others. Chainsaw v2 has it's roots from the original Chainsaw utility written by Oliver Burn, and with inspiration from the Log Factor 5 utility contributed by ThoughtWorks Inc.</description>
+    <summary>GUI-based Log viewer.</summary>
+    <tags>log logging log4j log4net</tags>
+  </metadata>
+</package>
