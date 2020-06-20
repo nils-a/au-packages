@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>smtp4dev</id>
@@ -10,10 +10,11 @@
     <licenseUrl>https://github.com/rnwood/smtp4dev/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/rnwood/smtp4dev/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Windows 7/Vista/XP/2003/2010 compatible dummy SMTP server. Sits in the system tray and does not deliver the received messages. The received messages can be quickly viewed, saved and the source/structure inspected. Useful for testing/debugging software that generates email.</description>
+    <description>Windows 7/Vista/XP/2003/2010 compatible dummy SMTP server. Sits in the system tray and does not deliver the received messages. The received messages can be quickly viewed, saved and the source/structure inspected. Useful for testing/debugging software that generates email.
+</description>
     <summary>Windows 7/Vista/XP/2003/2010 compatible dummy SMTP server</summary>
-    <releaseNotes />
-    <copyright />
+    <releaseNotes>https://github.com/rnwood/smtp4dev/releases/latest/tag/2.0.10</releaseNotes>
+    <copyright></copyright>
     <tags>smtp4dev tools mail dev</tags>
   </metadata>
 </package>
