@@ -27,10 +27,16 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
 
 function global:au_GetLatest {
+
     $download_page = Invoke-WebRequest -Uri $releases
+    # $download_page.links uses regex internally and is REAL SLOW when parsing large pages..
+    $links = $download_page.RawContent.split(@("<a "), "None") | select -Skip 1
+    Write-Host " - found $($links.Count) anchor-tags"
+    $links = $links | % { $_.split(@(">"),2, "None")[0] } | % { $_.split(@("href="),2, "None")[1].Substring(1) } | % { $_.split(@(""""), 2, "None")[0] } | ? {![string]::IsNullOrWhiteSpace($_)}
+    Write-Host " - found $($links.Count) links"
 
     $re  = "smtp4dev-2\..*-binaries\.zip" # use the standalone version 2
-    $url =  $download_page.links | ? href -match $re | select -First 1 -expand href
+    $url =  $links | ? { $_ -match $re } | select -First 1 
     $url = 'https://github.com' + $url
     Write-Host "Found url: $url"
 

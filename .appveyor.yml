@@ -7,6 +7,7 @@ max_jobs: 1
 branches:
   only:
   - main
+  - feature/auto-updates
 #build:
 #  verbosity: minimal
 
@@ -18,30 +19,30 @@ environment:
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
-  github_user_repo: {github_user}/{repository}
+  github_user_repo: nils-a/au-packages
   github_api_key:
-    secure: YOUR_GITHUB_API_KEY_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
+    secure: PbVGCEP0Hg2UdVtSi05hdPVZ8WXGA31997U8aqx+03q7pL4hStvYzKQOZab+ZMu6 #https://ci.appveyor.com/tools/encrypt
 
 
   # Mail credentials - for error notifications
-  mail_user:
-    secure: YOUR_EMAIL_ACCOUNT_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
-  mail_pass:
-    secure: YOUR_EMAIL_PASSWORD_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
-  mail_server: smtp.gmail.com
-  mail_port: 587
-  mail_enablessl: true
+  #mail_user:
+  #  secure: YOUR_EMAIL_ACCOUNT_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
+  #mail_pass:
+  #  secure: YOUR_EMAIL_PASSWORD_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
+  #mail_server: smtp.gmail.com
+  #mail_port: 587
+  #mail_enablessl: true
 
   # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
   # Optional, leave empty to create anonymous gist
-  gist_id:
+  gist_id: be944da6cbb50300f2e3114bf35724a0
 
   # Force test: gist id for test results
-  gist_id_test:
+  gist_id_test: ea6573baa8fb6d00a37e3bc209af4d5d
 
   # Chocolatey API key - to push updated packages
   api_key:
-    secure: YOUR_CHOCO_API_KEY_HERE_ENCRYPTED_STRING # https://ci.appveyor.com/tools/encrypt
+    secure: G/1Z6+bmDVhunbHP83OCNDHaHyskHczAMuhPmZhn6bqZZXKfcQ+7TsWPR+p0MmU1 # https://ci.appveyor.com/tools/encrypt
 
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
@@ -102,12 +103,12 @@ artifacts:
 - path: Update-AUPackages.md
 - path: au_temp.zip
 
-notifications:
-- provider: Email
-  to: $(mail_user)
-  on_build_success: false
-  on_build_failure: true
-  on_build_status_changed: true
+#notifications:
+#- provider: Email
+#  to: $(mail_user)
+#  on_build_success: false
+#  on_build_failure: true
+#  on_build_status_changed: true
 
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
