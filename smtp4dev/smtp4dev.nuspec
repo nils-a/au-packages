@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>smtp4dev</id>
-    <packageSourceUrl>https://github.com/nils-a/smtp4dev-chocolatey</packageSourceUrl>
+    <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
     <owners>nilsandresen</owners>
     <version>2.0.10</version>
     <title>smtp4dev</title>
