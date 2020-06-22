@@ -8,7 +8,7 @@ on:
   #pull_request:
   #  branches: [ main ]
   schedule:
-    cron:  '1 8 * * *'
+    - cron:  '12 8 * * *'
 
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
@@ -38,6 +38,11 @@ env:
   # Chocolatey API key - to push updated packages
   api_key: ${{ secrets.api_key }} # https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
 
+  # keep compatability with .appveyor.yml in scripts
+  APPVEYOR_SCHEDULED_BUILD:
+  APPVEYOR_FORCED_BUILD:
+  APPVEYOR_RE_BUILD:
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -57,9 +62,12 @@ jobs:
         git config --global user.name "Chocolatey"
         git config --global core.safecrlf false
 
-    - name: fake 
+    - name: fake .appveyor.yml variables
       shell: powershell
       run: |
+        $env:APPVEYOR_SCHEDULED_BUILD = (if(${env:GITHUB_EVENT_NAME} -like "schedule") {"true"} else {""})
+        $env:APPVEYOR_FORCED_BUILD = "" # builds started by "New build" button or from the same API
+        $env:APPVEYOR_RE_BUILD = "" # build started by “Re-build commit/PR” button of from the same API
 
     - name: install
       shell: powershell
