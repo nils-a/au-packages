@@ -2,7 +2,7 @@
 
 $packageName= 'sentinel'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/yarseyah/sentinel/releases/download/0.13.4.0/Sentinel-Setup-0.13.4.exe'
+$url        = 'https://github.com/yarseyah/sentinel/releases/download/0.14.1/Sentinel-Setup-0.14.1.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -11,7 +11,7 @@ $packageArgs = @{
   url           = $url
   silentArgs    = '--silent'
 
-  checksum      = '0FB3B882CFE9D13FBBEB0486BC5417F4AF92B37610D8A502BFCFE94C1C4620F3'
+  checksum      = 'D58D8E3E52CF34B5882FBFD80FADCE375A1CA75CDBA878A63F71F33DE7D933B8'
   checksumType  = 'sha256'
 }
 
