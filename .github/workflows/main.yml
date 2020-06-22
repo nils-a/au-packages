@@ -80,7 +80,6 @@ jobs:
         git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
         . "$Env:TEMP/au/scripts/Install-AU.ps1" ${env:au_version}
         "Build info"
-        "TODO: This is broken, as we're not on appveyor!!!"
         '  {0,-20} {1}' -f 'SCHEDULED BUILD:', (${env:APPVEYOR_SCHEDULED_BUILD} -eq 'true')
         '  {0,-20} {1}' -f 'FORCED BUILD:'   , (${env:APPVEYOR_FORCED_BUILD}    -eq 'true')
         '  {0,-20} {1}' -f 'RE BUILD:'       , (${env:APPVEYOR_RE_BUILD}        -eq 'true')
