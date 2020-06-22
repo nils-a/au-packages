@@ -8,7 +8,7 @@ on:
   #pull_request:
   #  branches: [ main ]
   schedule:
-    - cron:  '12 8 * * *'
+    - cron:  '16 8 * * *'
 
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
@@ -18,7 +18,7 @@ env:
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
-  github_user_repo: ${{ GITHUB_REPOSITORY }}
+  github_user_repo: ${ GITHUB_REPOSITORY }
   github_api_key: ${{ secrets.GITHUB_TOKEN }} # https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#using-the-github_token-in-a-workflow
 
   # Mail credentials - for error notifications
