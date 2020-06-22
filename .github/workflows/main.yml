@@ -8,7 +8,7 @@ on:
   #pull_request:
   #  branches: [ main ]
   schedule:
-    - cron:  '19 8 * * *'
+    - cron:  '0 9 * * *'
 
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
@@ -18,8 +18,8 @@ env:
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
-  github_user_repo: ${ GITHUB_REPOSITORY }
-  github_api_key: ${{ secrets.GITHUB_TOKEN }} # https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#using-the-github_token-in-a-workflow
+  github_user_repo: ${{ env.GITHUB_REPOSITORY }}
+  github_api_key: ${{ secrets.GH_API_KEY }} # https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
 
   # Mail credentials - for error notifications
   #mail_user: ${{ secrets.mail_user }} # https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
@@ -36,7 +36,7 @@ env:
   gist_id_test: ea6573baa8fb6d00a37e3bc209af4d5d
 
   # Chocolatey API key - to push updated packages
-  api_key: ${{ secrets.api_key }} # https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
+  api_key: ${{ secrets.CHOCO_API_KEY }} # https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
 
   # keep compatability with .appveyor.yml in scripts
   APPVEYOR_SCHEDULED_BUILD:
@@ -87,7 +87,7 @@ jobs:
       # Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
       #  cinst chocolatey-core.extension
 
-    - name: install
+    - name: do update
       shell: powershell
       run: |
         write-host "TODO: The code for forced / AU is missing here!!"
