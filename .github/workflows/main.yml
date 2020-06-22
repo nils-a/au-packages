@@ -13,7 +13,7 @@ on:
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version:
-  au_push: false
+  au_push: true
   # Force test: use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
 
@@ -42,6 +42,8 @@ env:
   APPVEYOR_SCHEDULED_BUILD:
   APPVEYOR_FORCED_BUILD:
   APPVEYOR_RE_BUILD:
+  APPVEYOR_PROJECT_NAME:
+  APPVEYOR_REPO_COMMIT_MESSAGE:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -65,9 +67,13 @@ jobs:
     - name: fake .appveyor.yml variables
       shell: powershell
       run: |
-        $env:APPVEYOR_SCHEDULED_BUILD = if(${env:GITHUB_EVENT_NAME} -like "schedule") {"true"} else {""}
-        $env:APPVEYOR_FORCED_BUILD = "" # builds started by "New build" button or from the same API
-        $env:APPVEYOR_RE_BUILD = "" # build started by “Re-build commit/PR” button of from the same API
+        $env:APPVEYOR_SCHEDULED_BUILD = if($env:GITHUB_EVENT_NAME -like "schedule") {"true"} else {""}
+        $env:APPVEYOR_FORCED_BUILD = "" # gh-actions can not be re-run, can they?
+        $env:APPVEYOR_RE_BUILD = "" # gh-actions can not be re-run, can they?
+        $env:APPVEYOR_PROJECT_NAME = $env:GITHUB_WORKFLOW
+        $env:APPVEYOR_REPO_COMMIT_MESSAGE = $env:COMMIT_MSG
+      env:
+        COMMIT_MSG: ${{ github.event.head_commit.message }}
 
     - name: install
       shell: powershell
@@ -84,14 +90,38 @@ jobs:
         '  {0,-20} {1}' -f 'SCHEDULED BUILD:', (${env:APPVEYOR_SCHEDULED_BUILD} -eq 'true')
         '  {0,-20} {1}' -f 'FORCED BUILD:'   , (${env:APPVEYOR_FORCED_BUILD}    -eq 'true')
         '  {0,-20} {1}' -f 'RE BUILD:'       , (${env:APPVEYOR_RE_BUILD}        -eq 'true')
-      # Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
-      #  cinst chocolatey-core.extension
+        # Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
+        #  cinst chocolatey-core.extension
 
     - name: do update
       shell: powershell
       run: |
-        write-host "TODO: The code for forced / AU is missing here!!"
-        $forced=""
+        $ErrorActionPreference = 'Continue'
+
+        if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
+
+        if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
+            switch -regex ($Env:APPVEYOR_REPO_COMMIT_MESSAGE)
+            {
+                '\[AU (.+?)\]'   { $forced = $Matches[1] }
+
+                '\[PUSH (.+?)\]' {
+                    $packages = $Matches[1] -split ' '
+                    Write-Host "PUSHING PACKAGES: $packages"
+                    foreach ($package in $packages) {
+                        Write-Host ("{0}`n{1}`n" -f ('-'*60), "PACKAGE: $package")
+                        $package_dir = ls -recurse | ? { $_.Name -eq "$package.nuspec"} | select -First 1 | % Directory
+                        if (!$package_dir) { Write-Warning "Can't find package '$package'"; continue }
+                        pushd $package_dir
+                          if (Test-Path update.ps1 -ea 0) { ./update.ps1 }
+                          choco pack; Push-Package;
+                        popd
+                    }
+                    return
+                }
+            }
+        }
+
         ./update_all.ps1 -ForcedPackages $forced
         7z a au_temp.zip ${env:TEMP}\chocolatey\au\*
 
@@ -112,5 +142,4 @@ jobs:
 
 
 #TODO:
-# - Notifications 
-# - AppVeyor-ENV variables ?!
+# - Notifications ?
