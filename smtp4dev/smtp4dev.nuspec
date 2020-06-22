@@ -17,4 +17,7 @@
     <copyright></copyright>
     <tags>smtp4dev tools mail dev</tags>
   </metadata>
+  <files>
+    <file src="tools\**\*.ps1" target="tools" />
+  </files>  
 </package>

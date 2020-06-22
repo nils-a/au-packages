@@ -1,4 +1,4 @@
-[![](https://ci.appveyor.com/api/projects/status/github/nils-a/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/nils-a/chocolatey-packages)
+![Update Packages](https://github.com/nils-a/au-packages/workflows/Update%20Packages/badge.svg)
 [Update status](https://gist.github.com/nils-a/be944da6cbb50300f2e3114bf35724a0)
 [![](http://transparent-favicon.info/favicon.ico)](#)
 [chocolatey/nilsandresen](https://chocolatey.org/profiles/nilsandresen)
