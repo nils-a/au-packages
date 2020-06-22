@@ -8,7 +8,7 @@ on:
   #pull_request:
   #  branches: [ main ]
   schedule:
-    - cron:  '16 8 * * *'
+    - cron:  '19 8 * * *'
 
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
@@ -65,7 +65,7 @@ jobs:
     - name: fake .appveyor.yml variables
       shell: powershell
       run: |
-        $env:APPVEYOR_SCHEDULED_BUILD = (if(${env:GITHUB_EVENT_NAME} -like "schedule") {"true"} else {""})
+        $env:APPVEYOR_SCHEDULED_BUILD = if(${env:GITHUB_EVENT_NAME} -like "schedule") {"true"} else {""}
         $env:APPVEYOR_FORCED_BUILD = "" # builds started by "New build" button or from the same API
         $env:APPVEYOR_RE_BUILD = "" # build started by “Re-build commit/PR” button of from the same API
 
