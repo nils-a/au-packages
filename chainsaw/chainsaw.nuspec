@@ -17,4 +17,7 @@
     <releaseNotes>https://logging.apache.org/chainsaw/2.x/changes-report.html#a2.0.0</releaseNotes>
     <tags>log logging log4j log4net</tags>
   </metadata>
+  <files>
+    <file src="tools\**\*.ps1" target="tools" />
+  </files>
 </package>
