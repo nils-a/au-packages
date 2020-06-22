@@ -38,13 +38,6 @@ env:
   # Chocolatey API key - to push updated packages
   api_key: ${{ secrets.CHOCO_API_KEY }} # https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
 
-  # keep compatability with .appveyor.yml in scripts
-  APPVEYOR_SCHEDULED_BUILD:
-  APPVEYOR_FORCED_BUILD:
-  APPVEYOR_RE_BUILD:
-  APPVEYOR_PROJECT_NAME:
-  APPVEYOR_REPO_COMMIT_MESSAGE:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -67,11 +60,12 @@ jobs:
     - name: fake .appveyor.yml variables
       shell: powershell
       run: |
-        $env:APPVEYOR_SCHEDULED_BUILD = if($env:GITHUB_EVENT_NAME -like "schedule") {"true"} else {""}
-        $env:APPVEYOR_FORCED_BUILD = "" # gh-actions can not be re-run, can they?
-        $env:APPVEYOR_RE_BUILD = "" # gh-actions can not be re-run, can they?
-        $env:APPVEYOR_PROJECT_NAME = $env:GITHUB_WORKFLOW
-        $env:APPVEYOR_REPO_COMMIT_MESSAGE = $env:COMMIT_MSG
+        if($env:GITHUB_EVENT_NAME -like "schedule") {
+          Write-Host "::set-env name=APPVEYOR_SCHEDULED_BUILD::true"
+        }
+        # do not set APPVEYOR_FORCED_BUILD, APPVEYOR_RE_BUILD - gh-actions can not be re-run, can they?
+        Write-Host "::set-env name=APPVEYOR_PROJECT_NAME::$($env:GITHUB_WORKFLOW)"
+        Write-Host "::set-env name=APPVEYOR_REPO_COMMIT_MESSAGE::$($env:COMMIT_MSG)"
       env:
         COMMIT_MSG: ${{ github.event.head_commit.message }}
 
