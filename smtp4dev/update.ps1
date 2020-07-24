@@ -1,7 +1,7 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-$releases    = 'https://github.com/rnwood/smtp4dev/releases/latest'
+$releases    = 'https://github.com/rnwood/smtp4dev/releases/tag/v2.0.10' # no more 'latest' v2 is now officailly old...
 
 function global:au_SearchReplace {
    @{
