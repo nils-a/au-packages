@@ -4,7 +4,7 @@ name: Update Packages
 # events but only for the master branch
 on:
   push:
-    branches: [ main ]
+    branches: [ main, 'features/notify' ]
   #pull_request:
   #  branches: [ main ]
   schedule:
@@ -13,7 +13,7 @@ on:
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version:
-  au_push: false
+  au_push: true
   # Force test: use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
 
@@ -133,6 +133,9 @@ jobs:
       with:
        path: au_temp.zip
 
+#notifications
+    - name: notify slack
+      uses: rtCamp/action-slack-notify@master
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
-#TODO:
-# - Notifications ?
