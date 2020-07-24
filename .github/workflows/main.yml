@@ -128,9 +128,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
        name: au_temp
-       path: au_temp.zip
+       path: ${env:TEMP}\chocolatey\au\
 
-# notify job ( on linux )
+# notify job ( runs on ubuntu for action-slack-notify )
   notify:
     runs-on: ubuntu-latest
     defaults:
@@ -146,14 +146,24 @@ jobs:
     
     - name: prepare output
       run: |
-        #Expand-Archive result.zip
-        Get-Location
-        Get-ChildItem -Recurse
         $info = Import-CliXml update_info.xml
+        if(!!$info.result.errors.ToString()) {
+          # errors 
+          Write-Host "::set-env name=SLACK_ICON_EMOJI:::male-detective:"  
+          Write-Host "::set-env name=SLACK_COLOR::#ff0000"  
+        } else if (!!$info.result.pushed.ToString()) {
+          Write-Host "::set-env name=SLACK_ICON_EMOJI:::+1:"  
+          Write-Host "::set-env name=SLACK_COLOR::#00ff00"  
+        } else {
+          Write-Host "::set-env name=SLACK_ICON_EMOJI:::face_with_rolling_eyes:"  
+          Write-Host "::set-env name=SLACK_COLOR::#ffff00"  
+        }
         Write-Host "::set-env name=SLACK_MESSAGE::$($info.stats)"
 
     - name: notify slack
       uses: rtCamp/action-slack-notify@master
       env:
+        SLACK_ICON: 
+        SLACK_USERNAME: 'AU Bot @ github'
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
