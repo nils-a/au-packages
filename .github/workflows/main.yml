@@ -40,7 +40,7 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  au:
     # The type of runner that the job will run on
     runs-on: windows-latest
     defaults:
@@ -137,7 +137,7 @@ jobs:
     defaults:
       run:
         shell: pwsh
-
+    needs: au
     steps:
     - name: download artifact
       uses: actions/download-artifact@v2
