@@ -40,10 +40,12 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: powershell
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -51,14 +53,12 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: init
-      shell: powershell
       run: |
         git config --global user.email "chocolatey@realdimensions.net"
         git config --global user.name "Chocolatey"
         git config --global core.safecrlf false
 
     - name: fake .appveyor.yml variables
-      shell: powershell
       run: |
         if($env:GITHUB_EVENT_NAME -like "schedule") {
           Write-Host "::set-env name=APPVEYOR_SCHEDULED_BUILD::true"
@@ -70,7 +70,6 @@ jobs:
         COMMIT_MSG: ${{ github.event.head_commit.message }}
 
     - name: install
-      shell: powershell
       run: |
         Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
         $PSVersionTable
@@ -87,7 +86,6 @@ jobs:
         #  cinst chocolatey-core.extension
 
     - name: do update
-      shell: powershell
       run: |
         $ErrorActionPreference = 'Continue'
 
@@ -133,7 +131,23 @@ jobs:
       with:
        path: au_temp.zip
 
-#notifications
+# notify job ( on linux )
+  notify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: pwsh
+
+    - name: download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: update_info.xml
+    
+    - name: prepare output
+      run: |
+        $info = Import-CliXml update_info.xml
+        Write-Host "::set-env name=SLACK_MESSAGE::$($info.stats)"
+
     - name: notify slack
       uses: rtCamp/action-slack-notify@master
       env:
