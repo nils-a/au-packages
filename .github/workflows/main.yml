@@ -146,7 +146,8 @@ jobs:
     
     - name: prepare output
       run: |
-        Expand-Archive result.zip
+        #Expand-Archive result.zip
+        Get-Location
         Get-ChildItem -Recurse
         $info = Import-CliXml update_info.xml
         Write-Host "::set-env name=SLACK_MESSAGE::$($info.stats)"
