@@ -1,7 +1,6 @@
-![Update Packages](https://github.com/nils-a/au-packages/workflows/Update%20Packages/badge.svg)
-[Update status](https://gist.github.com/nils-a/be944da6cbb50300f2e3114bf35724a0)
-[![](http://transparent-favicon.info/favicon.ico)](#)
-[chocolatey/nilsandresen](https://chocolatey.org/profiles/nilsandresen)
+[![Update Packages](https://github.com/nils-a/au-packages/workflows/Update%20Packages/badge.svg)](https://github.com/nils-a/au-packages/actions/) 
+[![Update status](https://img.shields.io/badge/status-gist-green?style=flat&logo=github)](https://gist.github.com/nils-a/be944da6cbb50300f2e3114bf35724a0)
+[![nilsandresen](https://img.shields.io/badge/chocolatey-nilsandresen-green?style=flat&logo=Chocolatey)](https://chocolatey.org/profiles/nilsandresen)
 
 
 This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).  
