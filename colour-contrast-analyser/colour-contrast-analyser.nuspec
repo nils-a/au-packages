@@ -29,6 +29,6 @@
     <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.1.1</releaseNotes>
   </metadata>
   <files>
-    <file src="tools\**" target="tools" />
+    <file src="tools\**\*.ps1" target="tools" />
   </files>
 </package>
