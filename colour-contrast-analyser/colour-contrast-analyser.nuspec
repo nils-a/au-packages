@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>colour-contrast-analyser</id>
+    <version>3.1.1</version>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
+    <owners>nilsa</owners>
+    <title>Colour Contrast Analyser</title>
+    <authors>The Paciello Group</authors>
+    <projectUrl>https://developer.paciellogroup.com/resources/contrastanalyser/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ThePacielloGroup/CCAe/build/96x96.png</iconUrl>
+    <copyright>Year Software Vendor</copyright>
+    <licenseUrl>https://github.com/ThePacielloGroup/CCAe/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/ThePacielloGroup/CCAe</projectSourceUrl>
+    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/ThePacielloGroup/CCAe/issues</bugTrackerUrl>
+    <tags>colour-contrast-analyser CCAe wcag visual-elements</tags>
+    <summary>The Colour Contrast Analyser (CCA) helps you determine the legibility of text and the contrast of visual elements, such as graphical controls and visual indicators.</summary>
+    <description>The Colour Contrast Analyser (CCA) helps you determine the legibility of text and the contrast of visual elements, such as graphical controls and visual indicators.
+      ## Features
+      * WCAG 2.1 compliance indicators
+      * Several ways to set colours: raw text entry (accepts any valid CSS colour format), RGB sliders, colour picker (Windows and macOS only)
+      * Support for alpha transparency on foreground colours
+      * Colour blindness simulator
+    </description>
+    <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.1.1</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**\*.ps1" target="tools" />
+  </files>
+</package>
