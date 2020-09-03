@@ -9,11 +9,11 @@
     <title>GitUI</title>
     <authors>Stephan Dilly</authors>
     <projectUrl>https://github.com/extrawurst/gitui</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/gitui/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/feature/gitgui/gitui/logo.png</iconUrl>
     <copyright>Stephan Dilly</copyright>
     <licenseUrl>https://github.com/extrawurst/gitui/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>ttps://github.com/extrawurst/gitui</projectSourceUrl>
+    <projectSourceUrl>https://github.com/extrawurst/gitui</projectSourceUrl>
     <bugTrackerUrl>https://github.com/extrawurst/gitui/issues</bugTrackerUrl>
     <tags>git ui terminal rust</tags>
     <summary>Blazing fast terminal client for git written in Rust</summary>
