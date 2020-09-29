@@ -9,7 +9,7 @@
     <title>GitUI</title>
     <authors>Stephan Dilly</authors>
     <projectUrl>https://github.com/extrawurst/gitui</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/feature/gitgui/gitui/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/develop/gitui/logo.png</iconUrl>
     <copyright>Stephan Dilly</copyright>
     <licenseUrl>https://github.com/extrawurst/gitui/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
