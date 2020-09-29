@@ -6,7 +6,7 @@
     <version>1.34.1074</version>
     <title>Cleanmgr+</title>
     <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/cleanmgrplus/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/develop/cleanmgrplus/logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <authors>Mirinsoft</authors>
     <copyright>Mirinsoft</copyright>

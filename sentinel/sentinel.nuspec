@@ -11,7 +11,7 @@
     <licenseUrl>https://raw.githubusercontent.com/yarseyah/sentinel/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/yarseyah/sentinel/releases</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/sentinel/Logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/develop/sentinel/Logo.png</iconUrl>
     <description>Sentinel is a viewer for log-files - specifically designed to act as a network end-point for the likes of nLog and log4net, additionally it then works really well for capturing log entries from multiple sources.
 </description>
     <summary>Log-file viewer for nLog and log4net</summary>
