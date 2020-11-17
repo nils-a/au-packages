@@ -24,7 +24,7 @@ function global:au_SearchReplace {
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 
-# function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
+function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
 
 function global:au_GetLatest {
 

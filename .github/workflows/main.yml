@@ -43,6 +43,8 @@ jobs:
   au:
     # The type of runner that the job will run on
     runs-on: windows-latest
+    if: |
+      !contains(format('{0} {1}', github.event.head_commit.message, github.event.pull_request.title), '[skip ci]')
     defaults:
       run:
         shell: powershell
