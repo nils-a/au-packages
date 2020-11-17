@@ -4,8 +4,8 @@
   <metadata>
     <id>lazygit</id>
     <version>0.20.4</version>
-    <packageSourceUrl>https://github.com/jeremyben/chocolatey-packages</packageSourceUrl>
-    <owners>Jeremy Bensimon</owners>
+    <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
+    <owners>Jeremy Bensimon; nilsandresen</owners>
     <title>lazygit</title>
     <authors>Jesse Duffield</authors>
     <projectUrl>https://github.com/jesseduffield/lazygit</projectUrl>
@@ -32,6 +32,7 @@ Call `lazygit` in your terminal inside a git repository.
 * Quick pushing/pulling
 * Squash down and rename commits
     </description>
+    <releaseNotes></releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
