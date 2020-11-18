@@ -2,7 +2,7 @@
 
 $packageName= 'smtp4dev'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/rnwood/smtp4dev/releases/download/v2.0.10/smtp4dev-2.0.10-binaries.zip'
+$url        = 'https://github.com/rnwood/smtp4dev/releases/download/3.1.1.1/Rnwood.Smtp4dev-win-x64-3.1.1.1.zip'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,16 +10,16 @@ $packageArgs = @{
   softwareName  = 'smtp4dev*'
   url           = $url
 
-  checksum      = 'ECEE7262066BE31643B26388536A42EFBF8E50C026A04EE4B61CBB15B64FEB09'
+  checksum      = 'C5F1A5225C9FEE3EF89A8E38B5B124129672B9AE4AE1FC72F9F51194FBF9244F'
   checksumType  = 'sha256'
 }
 
 Install-ChocolateyZipPackage @packageArgs 
 
 Write-Verbose "Adding Desktop-Link"
-$target = Join-Path -Path $toolsDir -ChildPath 'smtp4dev.exe'
-$desktop = $([System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory))
-$shortcut = Join-Path -Path $desktop -ChildPath ($packageName + '.lnk')
-Install-ChocolateyShortcut `
-   -ShortcutFilePath $shortcut `
-   -TargetPath $target
+$target = Join-Path -Path $toolsDir -ChildPath 'Rnwood.Smtp4dev.exe'
+
+Write-Verbose "Adding shim"
+Install-BinFile `
+  -Name $packageName `
+  -Path $target

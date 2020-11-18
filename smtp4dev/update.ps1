@@ -1,7 +1,7 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-$releases    = 'https://github.com/rnwood/smtp4dev/releases/tag/v2.0.10' # no more 'latest' v2 is now officailly old...
+$releases    = 'https://github.com/rnwood/smtp4dev/releases' 
 
 function global:au_SearchReplace {
    @{
@@ -28,19 +28,19 @@ function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLa
 
 function global:au_GetLatest {
 
-    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = Invoke-WebRequest -Uri "$releases/latest"
     # $download_page.links uses regex internally and is REAL SLOW when parsing large pages..
     $links = $download_page.RawContent.split(@("<a "), [stringsplitoptions]::None) | select -Skip 1
     Write-Host " - found $($links.Count) anchor-tags"
     $links = $links | % { $_.split(@(">"),2, [stringsplitoptions]::None)[0] } | % { $_.split(@("href="),2, [stringsplitoptions]::None)[1].Substring(1) } | % { $_.split(@(""""), 2, [stringsplitoptions]::None)[0] } | ? {![string]::IsNullOrWhiteSpace($_)}
     Write-Host " - found $($links.Count) links"
 
-    $re  = "smtp4dev-2\..*-binaries\.zip" # use the standalone version 2
+    $re  = "Rnwood.Smtp4dev-win-x64-[0-9\-\.]+\.zip" # use the standalone version 3
     $url =  $links | ? { $_ -match $re } | select -First 1 
     $url = 'https://github.com' + $url
     Write-Host "Found url: $url"
 
-    $version = $url -split '-|.zip' | select -Last 1 -Skip 2
+    $version = $url -split '-|.zip' | select -Last 1 -Skip 1
     Write-Host "Found version: $version"
 
     return @{
