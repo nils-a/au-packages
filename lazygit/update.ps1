@@ -48,7 +48,7 @@ function global:au_GetLatest {
         URL32        = $url
         URL64        = $url.Replace('32-bit', 'x86_64')
         Version      = $version
-        ReleaseNotes = "$releases/tag/${version}"
+        ReleaseNotes = "$releases/tag/v${version}"
     }
 }
 
