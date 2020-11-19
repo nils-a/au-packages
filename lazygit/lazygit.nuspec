@@ -9,11 +9,11 @@
     <title>lazygit</title>
     <authors>Jesse Duffield</authors>
     <projectUrl>https://github.com/jesseduffield/lazygit</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/jesseduffield/lazygit/25c93c678d0c198ef1610ec9d8743d8ae1e81a84/docs/resources/viewing-commit-diffs.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/lazygit/logo.png</iconUrl>
     <projectSourceUrl>https://github.com/jesseduffield/lazygit</projectSourceUrl>
     <licenseUrl>https://github.com/jesseduffield/lazygit/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <docsUrl>https://github.com/jesseduffield/lazygit/blob/master/docs/keybindings/Keybindings_en.md</docsUrl>
+    <docsUrl>https://github.com/jesseduffield/lazygit/blob/master/docs/</docsUrl>
     <tags>lazygit git terminal UI</tags>
     <summary>A simple terminal UI for git commands</summary>
     <description>
@@ -35,6 +35,6 @@ Call `lazygit` in your terminal inside a git repository.
     <releaseNotes></releaseNotes>
   </metadata>
   <files>
-    <file src="tools\**" target="tools" />
+    <file src="tools\**\*.ps1" target="tools" />
   </files>
 </package>
