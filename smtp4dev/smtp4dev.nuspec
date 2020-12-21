@@ -3,6 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>smtp4dev</id>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <version>3.1.1.1</version>
     <owners>nilsandresen</owners>
     <title>smtp4dev</title>

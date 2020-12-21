@@ -5,11 +5,11 @@
     <id>colour-contrast-analyser</id>
     <version>3.1.1</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
-    <owners>nilsa</owners>
+    <owners>nilsandresen</owners>
     <title>Colour Contrast Analyser</title>
     <authors>The Paciello Group</authors>
     <projectUrl>https://developer.paciellogroup.com/resources/contrastanalyser/</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/develop/colour-contrast-analyser/icon.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/colour-contrast-analyser/icon.png</iconUrl>
     <copyright>Year Software Vendor</copyright>
     <licenseUrl>https://github.com/ThePacielloGroup/CCAe/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

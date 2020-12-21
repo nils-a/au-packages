@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gitui</id>
     <version>0.11.0-rc2</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
-    <owners>nilsa</owners>
+    <owners>nilsandresen</owners>
     <title>GitUI</title>
     <authors>Stephan Dilly</authors>
     <projectUrl>https://github.com/extrawurst/gitui</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/develop/gitui/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/gitui/logo.png</iconUrl>
     <copyright>Stephan Dilly</copyright>
     <licenseUrl>https://github.com/extrawurst/gitui/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

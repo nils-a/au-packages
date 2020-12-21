@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sentinel</id>
-    <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
     <version>0.14.1</version>
     <title>sentinel log-viewer</title>
@@ -11,7 +12,7 @@
     <licenseUrl>https://raw.githubusercontent.com/yarseyah/sentinel/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/yarseyah/sentinel/releases</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/develop/sentinel/Logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/sentinel/Logo.png</iconUrl>
     <description>Sentinel is a viewer for log-files - specifically designed to act as a network end-point for the likes of nLog and log4net, additionally it then works really well for capturing log entries from multiple sources.
 </description>
     <summary>Log-file viewer for nLog and log4net</summary>
