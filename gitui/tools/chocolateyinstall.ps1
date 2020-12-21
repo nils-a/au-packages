@@ -14,4 +14,6 @@ $packageArgs = @{
 }
 
 Install-ChocolateyZipPackage @packageArgs 
-Get-ChocolateyUnzip -FileFullPath (Join-Path -Path $toolsDir -ChildPath "gitui-win.tar") -Destination $toolsDir
+$tarFile = Join-Path -Path $toolsDir -ChildPath "gitui-win.tar"
+Get-ChocolateyUnzip -FileFullPath $tarFile -Destination $toolsDir
+Remove-Item $tarFile
