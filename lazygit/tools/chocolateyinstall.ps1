@@ -4,10 +4,10 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
     packageName   = $env:ChocolateyPackageName
     unzipLocation = $toolsDir
-    url           = 'https://github.com/jesseduffield/lazygit/releases/download/v0.23.7/lazygit_0.23.7_Windows_32-bit.zip'
-    url64bit      = 'https://github.com/jesseduffield/lazygit/releases/download/v0.23.7/lazygit_0.23.7_Windows_x86_64.zip'
-    checksum      = '1716739E52A2522512D25AEDE6A9D5DBC530170310E898F7DCB9DC0985740870'
-    checksum64    = '3FC25B7095834C02475253893B84DD162705AEDD4C91DCC6FE57C492D0C10FFD'
+    url           = 'https://github.com/jesseduffield/lazygit/releases/download/v0.24/lazygit_0.24_Windows_32-bit.zip'
+    url64bit      = 'https://github.com/jesseduffield/lazygit/releases/download/v0.24/lazygit_0.24_Windows_x86_64.zip'
+    checksum      = '84B8DC8C8E9BBEDB67D7DA18987BD7E818222E7A54BCED04B50D9BFB2C5BC893'
+    checksum64    = '825150A58961775AF71A0DC62B1369DFD9E6F573BF35E296725A81076CAA2ED7'
     checksumType  = 'sha256'
 }
 
