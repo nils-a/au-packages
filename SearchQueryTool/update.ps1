@@ -45,7 +45,7 @@ function global:au_GetLatest {
     return @{
         URL32        = $url
         Version      = $version
-        ReleaseNotes = "$releases/tag/v${version}"
+        ReleaseNotes = "$releases/tag/v${version}-Search-QueryTool"
     }
 }
 
