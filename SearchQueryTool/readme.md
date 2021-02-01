@@ -1,4 +1,4 @@
-# lazygit-chocolatey
+# SearchQueryTool-chocolatey
 This is a simple package to install [SearchQueryTool](https://github.com/pnp/PnP-Tools/tree/master/Solutions/SharePoint.Search.QueryTool) for [chcoclatey](https://chocolatey.org/)
 
 ## Description
