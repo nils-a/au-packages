@@ -2,12 +2,12 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>cleanmgrplus</id>
+    <id>cleanmgr-plus</id>
     <owners>nilsandresen</owners>
     <version>1.37.1170</version>
     <title>Cleanmgr+</title>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/cleanmgrplus/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/cleanmgr-plus/logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <authors>Mirinsoft</authors>
     <copyright>Mirinsoft</copyright>
