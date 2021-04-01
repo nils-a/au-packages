@@ -90,6 +90,7 @@ jobs:
     - name: do update
       run: |
         $ErrorActionPreference = 'Continue'
+        $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
         if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
 
