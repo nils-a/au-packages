@@ -4,10 +4,9 @@
   <metadata>
     <id>cleanmgrplus</id>
     <owners>nilsandresen</owners>
-    <version>1.37.1170</version>
-    <title>Cleanmgr+</title>
+    <version>2.0.0</version>
+    <title>[Deprecated] Cleanmgr+</title>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/cleanmgrplus/logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <authors>Mirinsoft</authors>
     <copyright>Mirinsoft</copyright>
@@ -16,13 +15,16 @@
     <docsUrl>https://github.com/builtbybel/CleanmgrPlus/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/builtbybel/CleanmgrPlus/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/builtbybel/CleanmgrPlus/</projectSourceUrl>
-    <description>Cleanmgr+ comes with better and modern UI when compared to the current Disk Cleanup and with an additional feature set (hence the +), such as the feeding with Custom scripts, i.e., to clean a Browser cache, etc.
+    <description>Due to a "glitch" in versioning upstream, all packages following version 1.35.1100 will
+    not be available as "newest" package in chocolatey. To counter this, a new package "cleanmgr-plus" was created.
+    As of now this package is deprecated and cleanmgr-plus is the new package.
 </description>
     <summary>Cleanmgr+ is a portable app that builds upon the Microsoft Disk Clean-up Tool (Cleanmgr.exe) by adding additional features and deleting more junk than the Disk Clean-up Tool.</summary>
-    <releaseNotes>https://github.com/builtbybel/CleanmgrPlus/releases/tag/1.37.1170</releaseNotes>
+    <releaseNotes>https://community.chocolatey.org/packages/cleanmgr-plus</releaseNotes>
     <tags>windows cleanup disk-cleanup cleanmgr</tags>
+    <dependencies>
+      <dependency id="cleanmgr-plus" version="1.37.1170" />
+    </dependencies>
   </metadata>
-  <files>
-    <file src="tools\**\*.ps1" target="tools" />
-  </files>  
+  <files />
 </package>
