@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gitui</id>
-    <version>0.13.0</version>
+    <version>0.14.0</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
     <title>GitUI</title>
@@ -19,7 +19,7 @@
     <summary>Blazing fast terminal client for git written in Rust</summary>
     <description>Blazing fast terminal client for git written in Rust
 </description>
-    <releaseNotes>https://github.com/extrawurst/gitui/releases/tag/v0.13.0</releaseNotes>
+    <releaseNotes>https://github.com/extrawurst/gitui/releases/tag/v0.14.0</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**\*.ps1" target="tools" />
