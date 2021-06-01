@@ -30,12 +30,12 @@ function global:au_GetLatest {
 
     $download_page = Invoke-WebRequest -Uri $releases
     # $download_page.links uses regex internally and is REAL SLOW when parsing large pages..
-    $links = $download_page.RawContent.split(@("<a "), "None") | select -Skip 1
+    $links = $download_page.RawContent.split(@("<a "), [stringsplitoptions]::None) | select -Skip 1
     Write-Host " - found $($links.Count) anchor-tags"
-    $links = $links | % { $_.split(@(">"),2, "None")[0] } | % { $_.split(@("href="),2, "None")[1].Substring(1) } | % { $_.split(@(""""), 2, "None")[0] } | ? {![string]::IsNullOrWhiteSpace($_)}
+    $links = $links | % { $_.split(@(">"),2, [stringsplitoptions]::None)[0] } | % { $_.split(@("href="),2, [stringsplitoptions]::None)[1].Substring(1) } | % { $_.split(@(""""), 2, "None")[0] } | ? {![string]::IsNullOrWhiteSpace($_)}
     Write-Host " - found $($links.Count) links"
 
-    $re  = "cleanmgr\+\.zip"
+    $re  = "cleanmgrplus.zip"
     $url =  $links | ? { $_ -match $re } | select -First 1 
     $url = 'https://github.com' + $url
     Write-Host "Found url: $url"
