@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>colour-contrast-analyser</id>
-    <version>3.1.1</version>
+    <version>3.1.2</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
     <title>Colour Contrast Analyser</title>
@@ -25,8 +25,8 @@
       * Several ways to set colours: raw text entry (accepts any valid CSS colour format), RGB sliders, colour picker (Windows and macOS only)
       * Support for alpha transparency on foreground colours
       * Colour blindness simulator
-    </description>
-    <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.1.1</releaseNotes>
+</description>
+    <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.1.2</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**\*.ps1" target="tools" />

@@ -7,9 +7,9 @@ function global:au_SearchReplace {
    @{
         ".\tools\chocolateyInstall.ps1" = @{
             "(^\s*\`$url\s*=\s*)('.*')"= "`$1'$($Latest.URL32)'"
-            "(^\s*\`$url64\s*=\s*)('.*')"= "`$1'$($Latest.URL64)'"
+            #"(^\s*\`$url64\s*=\s*)('.*')"= "`$1'$($Latest.URL64)'"
             "(^\s*checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
-            "(^\s*checksum64\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum64)'"
+            #"(^\s*checksum64\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum64)'"
         }
 
         "$($Latest.PackageName).nuspec" = @{
@@ -37,7 +37,7 @@ function global:au_GetLatest {
     $links = $links | % { $_.split(@(">"),2, [stringsplitoptions]::None)[0] } | % { $_.split(@("href="),2, [stringsplitoptions]::None)[1].Substring(1) } | % { $_.split(@(""""), 2, [stringsplitoptions]::None)[0] } | ? {![string]::IsNullOrWhiteSpace($_)}
     Write-Host " - found $($links.Count) links"
 
-    $re  = "CCA-Portable32-.+\.exe"
+    $re  = "CCA-Portable-.+\.exe"
     $url =  $links | ? { $_ -match $re } | select -First 1 
     $url = 'https://github.com' + $url
     Write-Host "Found url: $url"
@@ -47,7 +47,6 @@ function global:au_GetLatest {
 
     return @{
         URL32        = $url
-        URL64        = $url.Replace("Portable32", "Portable64")
         Version      = $version.Replace("v", "")
         ReleaseNotes = "$releases/tag/${version}"
     }
