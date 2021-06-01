@@ -2,7 +2,7 @@
 
 $packageName= 'cleanmgrplus'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/builtbybel/CleanmgrPlus/releases/download/1.37.1170/cleanmgr+.zip'
+$url        = 'https://github.com/builtbybel/CleanmgrPlus/releases/download/1.38.1200/cleanmgrplus.zip'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,7 +10,7 @@ $packageArgs = @{
   softwareName  = 'cleanmgrplus*'
   url           = $url
 
-  checksum      = 'CFBE4484839E642C4F847D7830BF26138A3D04E7E4CFEFBD7321771AFB331A97'
+  checksum      = 'B9B7394F341B80155CF560899869A2CEBB24529AD5E88CC86107E8FCF327459B'
   checksumType  = 'sha256'
 }
 
