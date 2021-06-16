@@ -2,7 +2,8 @@
 
 $packageName= 'chainsaw'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://www-eu.apache.org/dist/logging/chainsaw/2.0.0/apache-chainsaw-2.0.0-standalone.zip'
+$url        = 'https://downloads.apache.org/logging/chainsaw/2.1.0/apache-chainsaw-2.1.0-standalone.zip'
+$version    = '2.1.0'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,13 +11,13 @@ $packageArgs = @{
   url           = $url
   unzipLocation = $toolsDir
 
-  checksum      = 'b90b0e180f76772cf84e2844e54ddfaa6a5fb2e5a68c0f96eef2503785f299e6'
+  checksum      = '50F2B5CC594CD46621925CFA68D3FCA99D4BD7E6A5BC29F01CBFE451037C01EE'
   checksumType  = 'sha256'
 }
 
 Install-ChocolateyZipPackage @packageArgs 
 
-$batPath = Join-Path $toolsDir "apache-chainsaw-2.0.0\bin\chainsaw.bat"
+$batPath = Join-Path $toolsDir "apache-chainsaw-$version\bin\chainsaw.bat"
 Install-BinFile `
   -Name $packageName `
   -Path $batPath
