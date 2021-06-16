@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/ThePacielloGroup/CCAe/releases/download/v3.1.2/CCA-Portable-3.1.2.exe' 
+$url        = 'https://github.com/ThePacielloGroup/CCAe/releases/download/v3.1.3/CCA-Portable-3.1.3.exe' 
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -9,7 +9,7 @@ $packageArgs = @{
 
   softwareName  = 'colour-contrast-analyser*'
 
-  checksum      = '3DF7EC7FC3A90DC16A026365CD7615811188866892FC5AEA1198A30BE94F2084'
+  checksum      = 'F79E908D40F7D9113E809B45773D193E826638F5BA5941614854F4A228A31ED8'
   checksumType  = 'sha256' 
 }
 
