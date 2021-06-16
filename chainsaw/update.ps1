@@ -8,6 +8,7 @@ function global:au_SearchReplace {
         ".\tools\chocolateyInstall.ps1" = @{
             "(^\s*\`$url\s*=\s*)('.*')"= "`$1'$($Latest.URL32)'"
             "(^\s*checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
+            "(^\s*\`$version\s*=\s*)('.*')"= "`$1'$($Latest.Version)'"
         }
 
         "$($Latest.PackageName).nuspec" = @{
@@ -29,21 +30,18 @@ function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLa
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
 
-    $re  = "apache-chainsaw-.*-standalone.zip"
+    $re  = "apache-chainsaw-.*.zip"
     $url = $download_page.links | ? href -match $re | select -First 1 -expand href
 
     Write-Host "Mirror-page url is $url"
 
-    # url points only to the latest mirror-url...
-    $download_page = Invoke-WebRequest -Uri $url
-    $re  = "^https://.*$re" # no http/ftp[s]
-    $url = $download_page.links | ? href -match $re | select -First 1 -expand href
+    $version = $url -split "/" | select -Last 2 | select -First 1
+
+    Write-Host "Current version is $version"
+
+    $url = "https://downloads.apache.org/logging/chainsaw/$version/apache-chainsaw-$version-standalone.zip"
 
     Write-Host "download url is $url"
-    # now we're done.
-
-    $version = $url -split '-|.zip' | select -Last 1 -Skip 2
-    Write-Host "latest version is $version"
 
     return @{
         URL32        = $url
