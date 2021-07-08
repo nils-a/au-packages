@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if Ã¢â‚¬Å“ÃŽÂ©Ã¢â‚¬Â doesnÃ¢â‚¬â„¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>colour-contrast-analyser</id>
-    <version>3.1.3</version>
+    <version>3.1.4</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
     <title>Colour Contrast Analyser</title>
@@ -26,7 +26,7 @@
       * Support for alpha transparency on foreground colours
       * Colour blindness simulator
 </description>
-    <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.1.3</releaseNotes>
+    <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.1.4</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**\*.ps1" target="tools" />
