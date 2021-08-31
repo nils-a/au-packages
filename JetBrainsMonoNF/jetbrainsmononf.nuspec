@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>JetBrainsMonoNF</id>
+    <version>1</version>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
+    <owners>nilsandresen</owners>
+    <title>JetBrains Mono NerdFont</title>
+    <authors>JetBrains</authors>
+    <projectUrl>https://www.nerdfonts.com/</projectUrl>
+    <projectSourceUrl>https://github.com/ryanoasis/nerd-fonts</projectSourceUrl>
+    <licenseUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/ThinItalic/complete/OFL.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md</docsUrl>
+    <tags>jetbrains;font;nerd;nerdfont</tags>
+    <summary>JetBrains Mono, patched with Nerd Fonts.</summary>
+    <description>Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons). Specifically to add a high number of extra glyphs from popular 'iconic fonts' such as Font Awesome, Devicons, Octicons, and others.</description>
+    <releaseNotes>https://github.com/ryanoasis/nerd-fonts/releases/tag/v2.1.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**\*.ps1" target="tools" />
+  </files>
+</package>
