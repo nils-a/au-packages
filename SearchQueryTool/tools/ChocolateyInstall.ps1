@@ -5,9 +5,9 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
   packageName   = "SearchQueryTool"
   unzipLocation = $toolsDir
-  url           = 'https://github.com/pnp/PnP-Tools/releases/download/v2.8.8-Search-QueryTool/SearchQueryToolv2.8.8.zip'
+  url           = 'https://github.com/pnp/PnP-Tools/releases/download/v2.9.0-Search-QueryTool/SearchQueryToolv2.9.0.zip'
 
-  checksum      = '54C09396FFEFD79C4FAE4A00D3DAECA9749E842E725B7B69B68DAB5B090EDE11'
+  checksum      = '503C5B3471F87AC06AC1058F0391EBE925947E062F5CF8C165D40B3DD447D3CD'
   checksumType  = "sha256"
 }
 
