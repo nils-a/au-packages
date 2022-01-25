@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if Ã¢â‚¬Å“ÃŽÂ©Ã¢â‚¬Â doesnÃ¢â‚¬â„¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>cleanmgr-plus</id>
     <owners>nilsandresen</owners>
-    <version>1.38.1200</version>
+    <version>1.50.1300</version>
     <title>Cleanmgr+</title>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/cleanmgr-plus/logo.png</iconUrl>
@@ -19,7 +19,7 @@
     <description>Cleanmgr+ comes with better and modern UI when compared to the current Disk Cleanup and with an additional feature set (hence the +), such as the feeding with Custom scripts, i.e., to clean a Browser cache, etc.
 </description>
     <summary>Cleanmgr+ is a portable app that builds upon the Microsoft Disk Clean-up Tool (Cleanmgr.exe) by adding additional features and deleting more junk than the Disk Clean-up Tool.</summary>
-    <releaseNotes>https://github.com/builtbybel/CleanmgrPlus/releases/tag/1.38.1200</releaseNotes>
+    <releaseNotes>https://github.com/builtbybel/CleanmgrPlus/releases/tag/1.50.1300</releaseNotes>
     <tags>windows cleanup disk-cleanup cleanmgr</tags>
   </metadata>
   <files>
