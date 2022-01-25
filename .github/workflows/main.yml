@@ -9,6 +9,7 @@ on:
   #  branches: [ main ]
   schedule:
     - cron:  '35 7 * * *' # UTC !
+  workflow_dispatch:
 
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
