@@ -121,7 +121,7 @@ jobs:
         7z a au_temp.zip ${env:TEMP}\chocolatey\au\*
 
     - name: upload artifacts 1/2
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
        name: result
        path: |
@@ -129,7 +129,7 @@ jobs:
         Update-AUPackages.md
 
     - name: upload artifacts 2/2
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
        name: au_temp
        path: ${env:TEMP}\chocolatey\au\
