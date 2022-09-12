@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>JetBrainsMonoNF</id>
-    <version>2.1.0</version>
+    <version>2.2.2</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
     <title>JetBrains Mono Nerd Font</title>
@@ -16,9 +16,9 @@
     <tags>jetbrains;font;nerd;nerdfont</tags>
     <summary>JetBrains Mono, patched with Nerd Fonts.</summary>
     <description>Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons). Specifically to add a high number of extra glyphs from popular 'iconic fonts' such as Font Awesome, Devicons, Octicons, and others.</description>
-    <releaseNotes>https://github.com/ryanoasis/nerd-fonts/releases/tag/v2.1.0</releaseNotes>
+    <releaseNotes>https://github.com/ryanoasis/nerd-fonts/releases/tag/v2.2.2</releaseNotes>
     <dependencies>
-      <dependency id="chocolatey-font-helpers.extension" version="0.0.3.1"/>
+      <dependency id="chocolatey-font-helpers.extension" version="0.0.3.1" />
     </dependencies>
   </metadata>
   <files>
