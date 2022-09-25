@@ -1,8 +1,6 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-$releases    = 'https://github.com/jesseduffield/lazygit/releases'
-
 function global:au_SearchReplace {
    @{
         ".\tools\chocolateyInstall.ps1" = @{
@@ -29,26 +27,18 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases
-    # $download_page.links uses regex internally and is REAL SLOW when parsing large pages..
-    $links = $download_page.RawContent.split(@("<a "), [stringsplitoptions]::None) | select -Skip 1
-    Write-Host " - found $($links.Count) anchor-tags"
-    $links = $links | % { $_.split(@(">"),2, [stringsplitoptions]::None)[0] } | % { $_.split(@("href="),2, [stringsplitoptions]::None)[1].Substring(1) } | % { $_.split(@(""""), 2, [stringsplitoptions]::None)[0] } | ? {![string]::IsNullOrWhiteSpace($_)}
-    Write-Host " - found $($links.Count) links"
 
-    $re  = "lazygit_.*_Windows_32-bit\.zip" 
-    $url =  $links | ? { $_ -match $re } | select -First 1 
-    $url = 'https://github.com' + $url
-    Write-Host "Found url: $url"
+    $releases = Get-LatestGithubReleases -repoUser "jesseduffield" -repoName "lazygit"
+    $stable = $releases.latestStable | select -First 1
 
-    $version = $url -split '_' | select -Skip 1 -First 1
-    Write-Host "Found version: $version"
+    Write-Output $stable
+    $url = $stable.Assets | Where { $_ -like "*lazygit_*_Windows_32-bit.zip" } | select -First 1
 
     return @{
         URL32        = $url
         URL64        = $url.Replace('32-bit', 'x86_64')
-        Version      = $version
-        ReleaseNotes = "$releases/tag/v${version}"
+        Version      = $stable.Version
+        ReleaseNotes = $stable.ReleaseUrl
     }
 }
 

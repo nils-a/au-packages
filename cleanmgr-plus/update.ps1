@@ -1,8 +1,6 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-$releases    = 'https://github.com/builtbybel/CleanmgrPlus/releases'
-
 function global:au_SearchReplace {
    @{
         ".\tools\chocolateyInstall.ps1" = @{
@@ -28,25 +26,16 @@ function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLa
 
 function global:au_GetLatest {
 
-    $download_page = Invoke-WebRequest -Uri $releases
-    # $download_page.links uses regex internally and is REAL SLOW when parsing large pages..
-    $links = $download_page.RawContent.split(@("<a "), [stringsplitoptions]::None) | select -Skip 1
-    Write-Host " - found $($links.Count) anchor-tags"
-    $links = $links | % { $_.split(@(">"),2, [stringsplitoptions]::None)[0] } | % { $_.split(@("href="),2, [stringsplitoptions]::None)[1].Substring(1) } | % { $_.split(@(""""), 2, "None")[0] } | ? {![string]::IsNullOrWhiteSpace($_)}
-    Write-Host " - found $($links.Count) links"
+    $releases = Get-LatestGithubReleases -repoUser "builtbybel" -repoName "CleanmgrPlus"
+    $stable = $releases.latestStable | select -First 1
 
-    $re  = "cleanmgrplus.zip"
-    $url =  $links | ? { $_ -match $re } | select -First 1 
-    $url = 'https://github.com' + $url
-    Write-Host "Found url: $url"
-
-    $version =  $url -split '\/' | select -Last 2 | select -First 1
-    Write-Host "Found version: $version"
+    Write-Output $stable
+    $url = $stable.Assets | Where { $_ -like "*cleanmgrplus.zip" } | select -First 1
 
     return @{
         URL32        = $url
-        Version      = $version
-        ReleaseNotes = "$releases/tag/${version}"
+        Version      = $stable.Version
+        ReleaseNotes = $stable.ReleaseUrl
     }
 }
 

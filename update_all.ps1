@@ -70,7 +70,7 @@ $Options = [ordered]@{
 
     GitReleases  = @{
         ApiToken    = $Env:github_api_key                   #Your github api key
-        ReleaseType = 'package'                             #Either 1 release per date, or 1 release per package
+        ReleaseType = 'date'                                #Either 1 release per date, or 1 release per package
         Branch      = 'main'                                #target_commitish for creating a release
     }
 
