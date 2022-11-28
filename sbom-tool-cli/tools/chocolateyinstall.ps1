@@ -11,8 +11,4 @@ $packageArgs = @{
     checksumType  = 'sha256'
 }
 
-Get-ChocolateyWebFile -PackageName $packageArgs.packageName `
-    -FileFullPath $packageArgs.fileFullPath `
-    -Url $packageArgs.url `
-    -Checksum $packageArgs.checksum `
-    -ChecksumType $packageArgs.checksumType
+Get-ChocolateyWebFile @packageArgs
