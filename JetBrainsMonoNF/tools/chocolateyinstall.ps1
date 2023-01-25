@@ -5,8 +5,8 @@ $installLog = Join-Path -Path $toolsDir -ChildPath "installed.txt"
 $packageArgs = @{
     packageName   = $env:ChocolateyPackageName
     unzipLocation = $toolsDir
-    url           = 'https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.2/JetBrainsMono.zip'
-    checksum      = '298767F3BDAA991352A6880622D132AC4F621457B33053C58D8F2111009B8F09'
+    url           = 'https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip'
+    checksum      = '187C316BB77ED1C824099FE8621A17D14F7DE8A6CE5B14A1A04DE0AE674B4AA6'
     checksumType  = 'sha256'
 }
 
