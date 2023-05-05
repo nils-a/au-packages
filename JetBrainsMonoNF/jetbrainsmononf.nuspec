@@ -10,9 +10,9 @@
     <projectUrl>https://www.nerdfonts.com/</projectUrl>
     <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/JetBrainsMonoNF/logo.png</iconUrl>
     <projectSourceUrl>https://github.com/ryanoasis/nerd-fonts</projectSourceUrl>
-    <licenseUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/ThinItalic/complete/OFL.txt</licenseUrl>
+    <licenseUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/ThinItalic/OFL.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <docsUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md</docsUrl>
+    <docsUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/README.md</docsUrl>
     <tags>jetbrains;font;nerd;nerdfont</tags>
     <summary>JetBrains Mono, patched with Nerd Fonts.</summary>
     <description>Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons). Specifically to add a high number of extra glyphs from popular 'iconic fonts' such as Font Awesome, Devicons, Octicons, and others.</description>
