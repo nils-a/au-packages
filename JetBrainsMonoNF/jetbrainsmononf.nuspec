@@ -18,7 +18,7 @@
     <description>Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons). Specifically to add a high number of extra glyphs from popular 'iconic fonts' such as Font Awesome, Devicons, Octicons, and others.</description>
     <releaseNotes>https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.0.0</releaseNotes>
     <dependencies>
-      <dependency id="chocolatey-font-helpers.extension" version="0.0.3.1" />
+      <dependency id="chocolatey-font-helpers.extension" version="0.0.4" />
     </dependencies>
   </metadata>
   <files>
