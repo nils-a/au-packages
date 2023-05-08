@@ -12,17 +12,19 @@ $packageArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 
-$fontsFolder = (New-Object -ComObject Shell.Application).namespace(0x14).self.path
-$nerdFontsBeforeInstall = Get-ChildItem -Path $fontsFolder -Filter "JetBrains Mono*Nerd Font*.ttf" | select -ExpandProperty Name
+$fileFilter = "JetBrainsMono*.ttf"
 
-$fonts = Get-ChildItem $toolsDir -Filter "*Windows Compatible.ttf"
+$fontsFolder = (New-Object -ComObject Shell.Application).namespace(0x14).self.path
+$nerdFontsBeforeInstall = Get-ChildItem -Path $fontsFolder -Filter $fileFilter | select -ExpandProperty Name
+
+$fonts = Get-ChildItem $toolsDir -Filter $fileFilter
 $paths = $fonts | select -ExpandProperty FullName
 $names = $fonts | select -ExpandProperty Name
 Write-Debug "Installing the following fonts`r`n - $($names -join "`r`n - ")"
 
-$added = Install-ChocolateyFont $paths -Multiple
+$added = Install-ChocolateyFont -Paths $paths -Multiple
 Write-Debug "Installed $added fonts."
 
-$nerdFontsAfterInstall = Get-ChildItem -Path $fontsFolder -Filter "JetBrains Mono*Nerd Font*.ttf" | select -ExpandProperty Name
+$nerdFontsAfterInstall = Get-ChildItem -Path $fontsFolder -Filter $fileFilter | select -ExpandProperty Name
 $newlyInstalledFonts = $nerdFontsAfterInstall | Where-Object { $nerdFontsBeforeInstall -notcontains $_ }
 $newlyInstalledFonts | Out-File $installLog -Encoding unicode -Append
