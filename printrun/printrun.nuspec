@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>printrun</id>
+    <version>1.0.0</version>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
+    <owners>nilsandresen</owners>
+
+    <title>printrun</title>
+    <authors>kliment</authors>
+    <projectUrl>https://www.pronterface.com</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/printrun/logo.png</iconUrl>
+    <copyright>Copyright (C) 2011-2023 Kliment Yanev, Guillaume Seguin, and the other contributors listed in CONTRIBUTORS.md</copyright>
+    <licenseUrl>https://github.com/kliment/Printrun/blob/master/COPYING</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/kliment/Printrun</projectSourceUrl>
+    <docsUrl>https://www.pronterface.com/index.html#docs</docsUrl>
+    <bugTrackerUrl>https://github.com/kliment/Printrun/issues</bugTrackerUrl>
+    <tags>printrun 3dprinting pronterface pronsole printcore</tags>
+    <summary>Printrun is the suite that contains pronterface, a ui to controll a 3d-printer.</summary>
+    <description>Printrun for windows ships only pronterface.exe and not the other tools that are part of the printrun suite.
+</description>
+    <releaseNotes>https://github.com/kliment/Printrun/releases/tag/printrun-2.0.1</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
