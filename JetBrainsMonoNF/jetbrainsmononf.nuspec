@@ -2,26 +2,25 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>JetBrainsMonoNF</id>
-    <version>3.0.2</version>
+    <version>3.0.2.2023028</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
-    <title>JetBrains Mono Nerd Font</title>
+    <title>[Deprecated] JetBrains Mono Nerd Font</title>
     <authors>JetBrains</authors>
     <projectUrl>https://www.nerdfonts.com/</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/JetBrainsMonoNF/logo.png</iconUrl>
     <projectSourceUrl>https://github.com/ryanoasis/nerd-fonts</projectSourceUrl>
     <licenseUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/ThinItalic/OFL.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/README.md</docsUrl>
     <tags>jetbrains;font;nerd;nerdfont</tags>
     <summary>JetBrains Mono, patched with Nerd Fonts.</summary>
-    <description>Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons). Specifically to add a high number of extra glyphs from popular 'iconic fonts' such as Font Awesome, Devicons, Octicons, and others.</description>
+    <description>Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons). Specifically to add a high number of extra glyphs from popular 'iconic fonts' such as Font Awesome, Devicons, Octicons, and others.
+
+    This package is deprecated in favor of https://community.chocolatey.org/packages/nerd-fonts-JetBrainsMono</description>
     <releaseNotes>https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.0.2</releaseNotes>
     <dependencies>
-      <dependency id="chocolatey-font-helpers.extension" version="0.0.4" />
+      <dependency id="nerd-fonts-JetBrainsMono" version="3.0.2" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="tools\**\*.ps1" target="tools" />
-  </files>
+  <files />
 </package>
