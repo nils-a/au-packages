@@ -24,6 +24,6 @@ and creates backups.
     <releaseNotes>https://gitlab.com/bztsrc/usbimager/-/releases/1.0.9</releaseNotes>
   </metadata>
   <files>
-    <file src="tools\**" target="tools" />
+    <file src="tools\**\*.ps1" target="tools" />
   </files>
 </package>
