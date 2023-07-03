@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>usbimager</id>
+    <version>1.0.9</version>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>nilsandresen</owners>
+
+    <title>usbimager</title>
+    <authors>bzt</authors>
+    <projectUrl>https://bztsrc.gitlab.io/usbimager/</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/usbimager/logo.png</iconUrl>
+    <copyright>2020 bzt (bztsrc@gitlab)</copyright>
+    <licenseUrl>https://gitlab.com/bztsrc/usbimager/-/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://gitlab.com/bztsrc/usbimager</projectSourceUrl>
+    <bugTrackerUrl>https://gitlab.com/bztsrc/usbimager/-/issues</bugTrackerUrl>
+    <tags>usbimager usb image</tags>
+    <summary>A very minimal GUI app that can write compressed disk images to USB drives.</summary>
+    <description>USBImager is a really really simple GUI application that writes compressed disk images to USB drives
+and creates backups.
+</description>
+    <releaseNotes>https://gitlab.com/bztsrc/usbimager/-/releases/1.0.9</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
