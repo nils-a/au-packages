@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://gitlab.com/bztsrc/usbimager/raw/binaries/usbimager_1.0.9-i686-win-gdi.zip' # download url, HTTPS preferred
+$url        = 'https://gitlab.com/bztsrc/usbimager/raw/binaries/usbimager_1.0.10-i686-win-gdi.zip' # download url, HTTPS preferred
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -9,7 +9,7 @@ $packageArgs = @{
   unzipLocation = $toolsDir
 
   softwareName  = 'usbimager*'
-  checksum      = '9A90E605F51EC091F89D5E4B281092690B1737320D5200122E9B2CF58790C1EA'
+  checksum      = '9200FBAAA617856692A0A59ED80492E3BFC5B4D32F0A3FB199B80C6C5CA2BC47'
   checksumType  = 'sha256' #default is md5, can also be sha1, sha256 or sha512
 }
 

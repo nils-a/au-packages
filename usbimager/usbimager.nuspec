@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>usbimager</id>
-    <version>1.0.9</version>
+    <version>1.0.10</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>nilsandresen</owners>
 
@@ -21,7 +21,7 @@
     <description>USBImager is a really really simple GUI application that writes compressed disk images to USB drives
 and creates backups.
 </description>
-    <releaseNotes>https://gitlab.com/bztsrc/usbimager/-/releases/1.0.9</releaseNotes>
+    <releaseNotes>https://gitlab.com/bztsrc/usbimager/-/releases/1.0.10</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**\*.ps1" target="tools" />
