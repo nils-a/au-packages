@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>chrysalis.install</id>
+    <version>0.13.2</version>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
+    <owners>nilsandresen</owners>
+
+    <title>Chrysalis (install)</title>
+    <authors>Keyboardio</authors>
+    <projectUrl>https://github.com/keyboardio/Chrysalis#chrysalis</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/chrysalis/logo.png</iconUrl>
+    <copyright>Keyboardio</copyright>
+    <licenseUrl>https://github.com/keyboardio/Chrysalis/blob/master/COPYING</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/keyboardio/Chrysalis</projectSourceUrl>
+    <docsUrl>https://github.com/keyboardio/Chrysalis/wiki/A-Tour-of-Chrysalis</docsUrl>
+    <mailingListUrl>https://community.keyboard.io</mailingListUrl>
+    <bugTrackerUrl>https://github.com/keyboardio/Chrysalis/issues</bugTrackerUrl>
+    <tags>chrysalis keyboardio keyboard kaleidoscope</tags>
+    <summary>Chrysalis is a graphical configurator for Kaleidoscope-powered keyboards.</summary>
+    <description>Chrysalis is a graphical configurator for Kaleidoscope-powered keyboards. While still under development, it is already usable for a number of tasks. To try it, you don't even need to flash Kaleidoscope beforehand, Chrysalis can do that for you, as it ships with reasonable default firmware for each supported board.
+
+The primary purpose of the application is to allow one to configure their keyboard without having to compile or flash firmware, by storing the configuration on the keyboard itself, in EEPROM. There are no external tools required, just Chrysalis itself.
+</description>
+    <releaseNotes>https://github.com/keyboardio/Chrysalis/releases/tag/v0.13.2</releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\*.ps1" target="tools" />
+  </files>
+</package>
