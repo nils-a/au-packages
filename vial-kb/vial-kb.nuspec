@@ -4,6 +4,7 @@
     <id>vial-kb</id>
     <version>0.7.1</version>
     <owners>nilsandresen</owners>
+    <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
 
     <title>vial-kb (Install)</title>
     <authors>The vial Team</authors>

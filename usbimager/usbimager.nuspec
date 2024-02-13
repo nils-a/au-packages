@@ -4,7 +4,7 @@
   <metadata>
     <id>usbimager</id>
     <version>1.0.10.20231030</version>
-    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
 
     <title>usbimager</title>

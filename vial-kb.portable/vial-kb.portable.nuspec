@@ -4,6 +4,7 @@
     <id>vial-kb.portable</id>
     <version>0.7.1</version>
     <owners>nilsandresen</owners>
+    <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
 
     <title>vial-kb (Portable)</title>
     <authors>The vial Team</authors>
