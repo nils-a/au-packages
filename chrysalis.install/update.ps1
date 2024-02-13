@@ -1,5 +1,5 @@
 import-module au
-. $PSScriptRoot\..\chrysalis\update.ps1
+. $PSScriptRoot\..\_scripts\all.ps1
 
 function global:au_SearchReplace {
    @{
@@ -36,4 +36,7 @@ function global:au_GetLatest {
     }
 }
 
-update-package -ChecksumFor none -NoReadme
+if ($MyInvocation.InvocationName -ne '.') { # run the update only if script is not sourced
+    update-package -ChecksumFor none -NoReadme
+    if ($global:au_old_force -is [bool]) { $global:au_force = $global:au_old_force }
+}
