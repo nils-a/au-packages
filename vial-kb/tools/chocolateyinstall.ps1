@@ -1,0 +1,1 @@
+﻿#Install-VirtualPackage 'vial-kb.portable' 'vial-kb.install'
