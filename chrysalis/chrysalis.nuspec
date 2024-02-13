@@ -26,10 +26,11 @@ The primary purpose of the application is to allow one to configure their keyboa
 </description>
     <releaseNotes>https://github.com/keyboardio/Chrysalis/releases/tag/v0.13.2</releaseNotes>
     <dependencies>
-      <!-- switch this to chrysalis install, once install package is available -->
-      <dependency id="chrysalis.portable" version="[0.13.2]" />
+      <!-- switch this to chrysalis.install, once install package is available -->
+      <dependency id="chrysalis.portable" version="0.13.2" />
     </dependencies>
   </metadata>
   <files>
+    <file src="tools\**\*.ps1" target="tools" />
   </files>
 </package>
