@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>sbom-tool-cli</id>
+    <version>0.2.2</version>
+    <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
+    <owners>nilsandresen</owners>
+    <title>Microsoft sbom-tool (CLI)</title>
+    <authors>Microsoft</authors>
+    <projectUrl>https://github.com/microsoft/sbom-tool</projectUrl>
+    <projectSourceUrl>https://github.com/microsoft/sbom-tool</projectSourceUrl>
+    <licenseUrl>https://github.com/microsoft/sbom-tool/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://github.com/microsoft/sbom-tool/blob/main/README.md#run-the-tool</docsUrl>
+    <tags>sbom</tags>
+    <summary>The SBOM tool is a highly scalable and enterprise ready tool to create SPDX 2.2 compatible SBOMs for any variety of artifacts.</summary>
+    <description>The SBOM tool is a highly scalable and enterprise ready tool to create SPDX 2.2 compatible SBOMs for any variety of artifacts.
+</description>
+<releaseNotes>https://github.com/microsoft/sbom-tool/releases/tag/v0.2.2</releaseNotes>
+</metadata>
+  <files>
+    <file src="tools\**\*.ps1" target="tools" />
+  </files>
+</package>
