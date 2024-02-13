@@ -1,1 +1,1 @@
-﻿#Install-VirtualPackage 'chrysalis.portable'
+﻿#Install-VirtualPackage 'chrysalis.portable' 'chrysalis.install'

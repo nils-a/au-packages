@@ -10,7 +10,7 @@
     <title>Chrysalis</title>
     <authors>Keyboardio</authors>
     <projectUrl>https://github.com/keyboardio/Chrysalis#chrysalis</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/chysalis/chrysalis/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/chrysalis/logo.png</iconUrl>
     <copyright>Keyboardio</copyright>
     <licenseUrl>https://github.com/keyboardio/Chrysalis/blob/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -26,8 +26,7 @@ The primary purpose of the application is to allow one to configure their keyboa
 </description>
     <releaseNotes>https://github.com/keyboardio/Chrysalis/releases/tag/v0.13.2</releaseNotes>
     <dependencies>
-      <!-- switch this to chrysalis.install, once install package is available -->
-      <dependency id="chrysalis.portable" version="0.13.2" />
+      <dependency id="chrysalis.install" version="0.13.2" />
     </dependencies>
   </metadata>
   <files>
