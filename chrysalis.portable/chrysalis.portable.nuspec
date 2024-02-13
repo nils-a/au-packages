@@ -3,14 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>chrysalis.portable</id>
-    <version>0.13.2</version>
+    <version>0.13.3</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
 
     <title>Chrysalis (portable)</title>
     <authors>Keyboardio</authors>
     <projectUrl>https://github.com/keyboardio/Chrysalis#chrysalis</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/chysalis/chrysalis/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/chrysalis/logo.png</iconUrl>
     <copyright>Keyboardio</copyright>
     <licenseUrl>https://github.com/keyboardio/Chrysalis/blob/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -24,7 +24,7 @@
 
 The primary purpose of the application is to allow one to configure their keyboard without having to compile or flash firmware, by storing the configuration on the keyboard itself, in EEPROM. There are no external tools required, just Chrysalis itself.
 </description>
-    <releaseNotes>https://github.com/keyboardio/Chrysalis/releases/tag/v0.13.2</releaseNotes>
+    <releaseNotes>https://github.com/keyboardio/Chrysalis/releases/tag/v0.13.3</releaseNotes>
   </metadata>
   <files>
     <file src="tools\*.ps1" target="tools" />

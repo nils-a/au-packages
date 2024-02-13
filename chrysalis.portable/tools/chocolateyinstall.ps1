@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://github.com/keyboardio/Chrysalis/releases/download/v0.13.2/Chrysalis-win32-x64-0.13.2.zip' # download url, HTTPS preferred
+$url        = 'https://github.com/keyboardio/Chrysalis/releases/download/v0.13.3/Chrysalis-win32-x64-0.13.3.zip' # download url, HTTPS preferred
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -9,7 +9,7 @@ $packageArgs = @{
   softwareName  = 'chrysalis*'
   url           = $url
 
-  checksum      = '2E90F63BA68E4A0D8AD6A31588C209003DF51483C88EADBF192FDF34799E1F77'
+  checksum      = '83D73F39031AE415E1A79733DD175A6DB1C698C11FD7FE27496071A798538D47'
   checksumType  = 'sha256'
 }
 
