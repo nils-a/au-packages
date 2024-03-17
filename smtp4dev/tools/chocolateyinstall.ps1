@@ -2,7 +2,7 @@
 
 $packageName= 'smtp4dev'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/rnwood/smtp4dev/releases/download/3.3.2/Rnwood.Smtp4dev-win-x64-3.3.2.zip'
+$url        = 'https://github.com/rnwood/smtp4dev/releases/download/3.3.3/Rnwood.Smtp4dev-win-x64-3.3.3.zip'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,7 +10,7 @@ $packageArgs = @{
   softwareName  = 'smtp4dev*'
   url           = $url
 
-  checksum      = 'C21F70BB3FD759FB2D66DDE47AB3F4CEEA442223DEE02E516B9289451508335C'
+  checksum      = '0199D8E23C1FAD69C7F8A7B9144F33928A64B2AC873FF983CA4F8CFBDCD4DE07'
   checksumType  = 'sha256'
 }
 
