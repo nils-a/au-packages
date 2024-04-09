@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>vial-kb.portable</id>
+    <version>0.7.1</version>
+    <owners>nilsandresen</owners>
+    <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
+
+    <title>vial-kb (Portable)</title>
+    <authors>The vial Team</authors>
+    <projectUrl>https://get.vial.today/</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/vial-kb/logo.png</iconUrl>
+    <!-- <copyright>Year Software Vendor</copyright> -->
+    <licenseUrl>https://github.com/vial-kb/vial-gui/blob/main/COPYING</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/vial-kb/vial-gui/</projectSourceUrl>
+    <docsUrl>https://get.vial.today/manual/</docsUrl>
+    <bugTrackerUrl>https://github.com/vial-kb/vial-gui/issues</bugTrackerUrl>
+    <tags>vial-kb vial via keyboard qmk</tags>
+    <summary>Vial is an open-source cross-platform (Windows, Linux and Mac) GUI and a QMK fork for configuring your keyboard in real time.</summary>
+    <description>Vial is an open-source cross-platform (Windows, Linux and Mac) GUI and a QMK fork for configuring your keyboard in real time.
+</description>
+    <releaseNotes>https://github.com/vial-kb/vial-gui/releases/tag/v0.7.1</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**\*.ps1" target="tools" />
+  </files>
+</package>
