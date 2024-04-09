@@ -6,7 +6,7 @@
     <owners>nilsandresen</owners>
     <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
 
-    <title>vial-kb (Install)</title>
+    <title>vial-kb</title>
     <authors>The vial Team</authors>
     <projectUrl>https://get.vial.today/</projectUrl>
     <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/vial-kb/logo.png</iconUrl>
@@ -22,7 +22,7 @@
 </description>
     <releaseNotes>https://github.com/vial-kb/vial-gui/releases/tag/v0.7.1</releaseNotes>
     <dependencies>
-      <dependency id="vial-kb.install" version="0.1.0.20240123" />
+      <dependency id="vial-kb.install" version="0.7.1" />
     </dependencies>
   </metadata>
   <files>
