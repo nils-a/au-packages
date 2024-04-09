@@ -32,6 +32,12 @@ function global:au_GetLatest {
     Write-Output $stable
     $url = $stable.Assets | Where { $_ -like "*SearchQueryToolv*.zip" } | select -First 1
 
+    # since version 2.10.0, all versions end in "-Search-QueryTool", thus making
+    # all the version numbers practically prerelease versions.
+    if($stable.Version.Prerelease -eq "Search-QueryTool") {
+        $stable.Version.Prerelease = $null
+    }
+
     return @{
         URL32        = $url
         Version      = $stable.Version
