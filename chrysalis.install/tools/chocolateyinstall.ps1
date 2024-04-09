@@ -15,13 +15,3 @@ $packageArgs = @{
 }
 
 Install-ChocolateyPackage @packageArgs
-
-<#
-Remove-Item $toolsDir\*.exe -ErrorAction Ignore -Force
-
-$installLocation = Get-AppInstallLocation -AppNamePattern "chrysalis"
-if (!$installLocation)  { Write-Warning "Can't find Chrysalis install location"; return }
-Write-Host "Chrysalis installed to '$installLocation'"
-
-Install-BinFile 'chrysalis' $installLocation\chrysalis.exe
-#>
