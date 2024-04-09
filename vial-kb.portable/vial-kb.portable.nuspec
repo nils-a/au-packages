@@ -9,7 +9,7 @@
     <title>vial-kb (Portable)</title>
     <authors>The vial Team</authors>
     <projectUrl>https://get.vial.today/</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/vial-kb/vial-kb/logo.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/nils-a/au-packages/main/vial-kb/logo.png</iconUrl>
     <!-- <copyright>Year Software Vendor</copyright> -->
     <licenseUrl>https://github.com/vial-kb/vial-gui/blob/main/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
