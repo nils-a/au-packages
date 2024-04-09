@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>SearchQueryTool</id>
-    <version>2.10.0-Search-QueryTool</version>
+    <version>2.10.0</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <title>SearchQueryTool</title>
     <authors>nadeemis</authors>
