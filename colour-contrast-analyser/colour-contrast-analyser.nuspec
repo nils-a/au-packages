@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>colour-contrast-analyser</id>
-    <version>3.5.1</version>
+    <version>3.5.2</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
     <title>Colour Contrast Analyser</title>
@@ -25,7 +25,7 @@
       * Support for alpha transparency on foreground colours
       * Colour blindness simulator
 </description>
-    <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.5.1</releaseNotes>
+    <releaseNotes>https://github.com/ThePacielloGroup/CCAe/releases/tag/v3.5.2</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**\*.ps1" target="tools" />
