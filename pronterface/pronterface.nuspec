@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>pronterface</id>
-    <version>2.0.1</version>
+    <version>2.1.0</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>nilsandresen</owners>
 
@@ -21,7 +21,7 @@
     <summary>Pronterface is a ui to control a 3d-printer. Pronterface is part of the printrun suite.</summary>
     <description>Pronterface is a ui to control a 3d-printer. Pronterface is part of the printrun suite.
 </description>
-    <releaseNotes>https://github.com/kliment/Printrun/releases/tag/printrun-2.0.1</releaseNotes>
+    <releaseNotes>https://github.com/kliment/Printrun/releases/tag/printrun-2.1.0</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
