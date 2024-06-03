@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/extrawurst/gitui/releases/download/v0.26.2/gitui-win.tar.gz' 
+$url        = 'https://github.com/extrawurst/gitui/releases/download/v0.26.3/gitui-win.tar.gz' 
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -9,7 +9,7 @@ $packageArgs = @{
 
   softwareName  = 'gitui*'
 
-  checksum      = 'CE4D879CC111E4066E18FE672B627D5FAC4113482E2DDC42D049C1B8C5E59F0C'
+  checksum      = '89F55E3C2A62392923E82A9906FC4ED9C3DF15040DA6650F575FAB49059684DA'
   checksumType  = 'sha256' 
 }
 
