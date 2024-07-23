@@ -9,7 +9,7 @@ $packageArgs = @{
   unzipLocation = $toolsDir
 
   softwareName  = 'usbimager*'
-  checksum      = 'ad83b75c186994f732d913b27394e86214296f708a26021b70e561004e4499f7'
+  checksum      = '7C57380C050F186E420AA60A15A0F16B047539160D98BC2B7CAE97882FF992CA'
   checksumType  = 'sha256' #default is md5, can also be sha1, sha256 or sha512
 }
 
