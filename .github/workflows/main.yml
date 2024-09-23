@@ -68,7 +68,9 @@ jobs:
         }
         # do not set APPVEYOR_FORCED_BUILD, APPVEYOR_RE_BUILD - gh-actions can not be re-run, can they?
         Write-Output "APPVEYOR_PROJECT_NAME=$($env:GITHUB_WORKFLOW)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-        Write-Output "APPVEYOR_REPO_COMMIT_MESSAGE=$($env:COMMIT_MSG)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        Write-Output "APPVEYOR_REPO_COMMIT_MESSAGE<<EOF-EOF-EOF" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        Write-Output "$($env:COMMIT_MSG)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        Write-Output "EOF-EOF-EOF" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
       env:
         COMMIT_MSG: ${{ github.event.head_commit.message }}
 
