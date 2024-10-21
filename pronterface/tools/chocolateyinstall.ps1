@@ -2,7 +2,7 @@
 
 $packageName= 'pronterface'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/kliment/Printrun/releases/download/printrun-2.1.0/printrun-2.1.0_windows_x64_py3.10.zip'
+$url        = 'https://github.com/kliment/Printrun/releases/download/printrun-2.2.0/printrun-2.2.0_windows_x64_py3.10.zip'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,7 +10,7 @@ $packageArgs = @{
   softwareName  = 'pronterface*'
   url           = $url
 
-  checksum      = '34BFE4A0B5784EE4365CC28C7AF73D2D062F145A964CBFF36575F965E93D5B3A'
+  checksum      = '828559B08F957986EADE7C0B6A547CBE68B72924A4D2D3961820F8F1D578E423'
   checksumType  = 'sha256'
 }
 
