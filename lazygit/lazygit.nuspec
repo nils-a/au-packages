@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>lazygit</id>
-    <version>0.45.0</version>
+    <version>0.45.2</version>
     <packageSourceUrl>https://github.com/nils-a/au-packages/</packageSourceUrl>
     <owners>Jeremy Bensimon; nilsandresen</owners>
     <title>lazygit</title>
@@ -19,7 +19,7 @@
 
 If you're a mere mortal like me and you're tired of hearing how powerful git is when in your daily life it's a powerful pain in your ass, lazygit might be for you.
 </description>
-    <releaseNotes>https://github.com/jesseduffield/lazygit/releases/tag/v0.45.0</releaseNotes>
+    <releaseNotes>https://github.com/jesseduffield/lazygit/releases/tag/v0.45.2</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**\*.ps1" target="tools" />
