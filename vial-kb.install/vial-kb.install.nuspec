@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>vial-kb.install</id>
-    <version>0.7.2</version>
+    <version>0.7.3</version>
     <owners>nilsandresen</owners>
     <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
 
@@ -20,7 +20,7 @@
     <summary>Vial is an open-source cross-platform (Windows, Linux and Mac) GUI and a QMK fork for configuring your keyboard in real time.</summary>
     <description>Vial is an open-source cross-platform (Windows, Linux and Mac) GUI and a QMK fork for configuring your keyboard in real time.
 </description>
-    <releaseNotes>https://github.com/vial-kb/vial-gui/releases/tag/v0.7.2</releaseNotes>
+    <releaseNotes>https://github.com/vial-kb/vial-gui/releases/tag/v0.7.3</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**\*.ps1" target="tools" />
