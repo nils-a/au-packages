@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/vial-kb/vial-gui/releases/download/v0.7.3/Vial-v0.7.3-setup.exe' # download url, HTTPS preferred
+$url        = 'https://github.com/vial-kb/vial-gui/releases/download/v0.7.4/Vial-v0.7.4-setup.exe' # download url, HTTPS preferred
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -11,7 +11,7 @@ $packageArgs = @{
   silentArgs     = '/S'
   validExitCodes = @(0)
   softwareName   = 'Vial'
-  checksum       = '5708B5AC792DF057B4D72A857A9F82CB027A9F720F4586333463E7F94D7BF326'
+  checksum       = 'F84BC59BFD992B3F593B06387D5F73C0FA30EA0BC2F39ED8CF36CC4CB53787BD'
   checksumType   = 'sha256' #default is md5, can also be sha1, sha256 or sha512
 }
 
