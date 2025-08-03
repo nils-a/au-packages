@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>vial-kb</id>
-    <version>0.7.4</version>
+    <version>0.7.5</version>
     <owners>nilsandresen</owners>
     <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
 
@@ -22,7 +22,7 @@
 </description>
     <releaseNotes>https://github.com/vial-kb/vial-gui/releases/tag/v0.7.1</releaseNotes>
     <dependencies>
-      <dependency id="vial-kb.install" version="0.7.4" />
+      <dependency id="vial-kb.install" version="0.7.5" />
     </dependencies>
   </metadata>
   <files>
