@@ -79,13 +79,13 @@ jobs:
         git --version
         choco --version
         Get-ChildItem env:* | sort-object name
-        choco install chocolatey-au -y
+        choco install chocolatey-au -y --no-color --no-progress
         "Build info"
         '  {0,-20} {1}' -f 'SCHEDULED BUILD:', (${env:APPVEYOR_SCHEDULED_BUILD} -eq 'true')
         '  {0,-20} {1}' -f 'FORCED BUILD:'   , (${env:APPVEYOR_FORCED_BUILD}    -eq 'true')
         '  {0,-20} {1}' -f 'RE BUILD:'       , (${env:APPVEYOR_RE_BUILD}        -eq 'true')
         # Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
-        #  choco install chocolatey-core.extension -y
+        #  choco install chocolatey-core.extension -y --no-color --no-progress
 
     - name: do update
       run: |
