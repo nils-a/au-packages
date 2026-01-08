@@ -13,16 +13,16 @@ function resolveLatestRelease {
     else {
       $release = $response | ? prerelease -EQ $usePrerelease | ? tag_name -Match $verRegex | select -First 1;
     }
-  
+
     if (!$release) {
       return @{};
     }
-  
+
     $version = $matches[1];
-  
+
     [array]$assetUrls = $release.assets | ? name -Match "\.(msi|exe|zip|7z|gz)$" | select -expand browser_download_url;
     $assetUrls += @($release.tarball_url; $release.zipball_url)
-  
+
     return @{
       Name         = $release.name
       Version      = $version
@@ -32,31 +32,32 @@ function resolveLatestRelease {
       Body         = $release.body
     };
   }
-  
+
   function Get-LatestGithubReleases {
     param(
       [string]$repoUser,
       [string]$repoName,
-      [boolean]$includePreRelease = $true
+      [boolean]$includePreRelease = $true,
+      [boolean]$skipAuth = $false
     )
-  
+
     If (!$includePreRelease) {
       $apiUrl = "https://api.github.com/repos/$($repoUser)/$($repoName)/releases/latest";
     }
     Else {
       $apiUrl = "https://api.github.com/repos/$($repoUser)/$($repoName)/releases";
     }
-  
+
     $headers = @{}
-  
-    If (Test-Path Env:\github_api_key) {
+
+    If ((-not $skipAuth) -and (Test-Path Env:\github_api_key)) {
       $headers.Authorization = "token " + $env:github_api_key;
     }
-  
+
     $response = Invoke-RestMethod -Uri $apiUrl -Headers $headers;
-  
+
     $latestStableRelease = resolveLatestRelease -response $response -usePrerelease $false;
     $latestRelease = resolveLatestRelease -response $response -usePrerelease $includePreRelease;
-  
+
     return @{ latest = $latestRelease ; latestStable = $latestStableRelease};
   }

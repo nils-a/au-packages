@@ -25,7 +25,8 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
 
 function global:au_GetLatest {
-    $release = Get-LatestGithubReleases -repoUser microsoft -repoName sbom-tool | select -ExpandProperty latest
+    # skip auth on Microsoft - my token does not confirm to their rules.
+    $release = Get-LatestGithubReleases -repoUser microsoft -repoName sbom-tool -skipAuth $true | select -ExpandProperty latest
 
     return @{
         Version      = $release.Version
