@@ -12,8 +12,6 @@ on:
   workflow_dispatch:
 
 env:
-  # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
-  au_version: "master"
   au_push: true
   # Force test: use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
@@ -81,14 +79,13 @@ jobs:
         git --version
         choco --version
         Get-ChildItem env:* | sort-object name
-        git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
-        . "$Env:TEMP/au/scripts/Install-AU.ps1" ${env:au_version}
+        choco install chocolatey-au -y
         "Build info"
         '  {0,-20} {1}' -f 'SCHEDULED BUILD:', (${env:APPVEYOR_SCHEDULED_BUILD} -eq 'true')
         '  {0,-20} {1}' -f 'FORCED BUILD:'   , (${env:APPVEYOR_FORCED_BUILD}    -eq 'true')
         '  {0,-20} {1}' -f 'RE BUILD:'       , (${env:APPVEYOR_RE_BUILD}        -eq 'true')
         # Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
-        #  cinst chocolatey-core.extension
+        #  choco install chocolatey-core.extension
 
     - name: do update
       run: |

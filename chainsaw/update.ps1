@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 . $PSScriptRoot\..\_scripts\all.ps1
 
 $releases    = 'https://logging.apache.org/chainsaw/2.x/download.html'
