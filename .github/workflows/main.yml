@@ -85,7 +85,7 @@ jobs:
         '  {0,-20} {1}' -f 'FORCED BUILD:'   , (${env:APPVEYOR_FORCED_BUILD}    -eq 'true')
         '  {0,-20} {1}' -f 'RE BUILD:'       , (${env:APPVEYOR_RE_BUILD}        -eq 'true')
         # Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
-        #  choco install chocolatey-core.extension
+        #  choco install chocolatey-core.extension -y
 
     - name: do update
       run: |
@@ -117,21 +117,14 @@ jobs:
         }
 
         ./update_all.ps1 -ForcedPackages $forced
-        7z a au_temp.zip ${env:TEMP}\chocolatey\au\*
 
-    - name: upload artifacts 1/2
+    - name: upload artifacts
       uses: actions/upload-artifact@v6
       with:
        name: result
        path: |
-        update_info.xml
         Update-AUPackages.md
-
-    - name: upload artifacts 2/2
-      uses: actions/upload-artifact@v6
-      with:
-       name: au_temp
-       path: ${env:TEMP}\chocolatey\au\
+        Update-History.md
 
 # notify job ( runs on ubuntu for action-slack-notify )
   notify:
@@ -146,12 +139,12 @@ jobs:
       uses: actions/download-artifact@v7
       with:
         name: result
-    
+
     - name: prepare output
       run: |
         $info = Import-CliXml update_info.xml
         if(!!$info.result.errors.ToString()) {
-          # errors 
+          # errors
           Write-Output "SLACK_ICON_EMOJI=:male-detective:" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
           Write-Output "SLACK_COLOR=#ff0000" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         } elseIf (!!$info.result.pushed.ToString()) {
@@ -166,7 +159,7 @@ jobs:
     - name: notify slack
       uses: rtCamp/action-slack-notify@master
       env:
-        SLACK_ICON: 
+        SLACK_ICON:
         SLACK_USERNAME: 'AU Bot @ github'
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
