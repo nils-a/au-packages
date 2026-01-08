@@ -28,7 +28,9 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
 
 function global:au_GetLatest {
+    Write-Host "Chainsaw: Before WebRequest"
     $download_page = Invoke-WebRequest -Uri $releases
+    Write-Host "Chainsaw: After WebRequest"
 
     $re  = "apache-chainsaw-.*.zip"
     $url = $download_page.links | ? href -match $re | select -First 1 -expand href
@@ -42,6 +44,8 @@ function global:au_GetLatest {
     $url = "https://downloads.apache.org/logging/chainsaw/$version/apache-chainsaw-$version-standalone.zip"
 
     Write-Host "download url is $url"
+
+    Write-Host "Chainsaw: update done."
 
     return @{
         URL32        = $url
