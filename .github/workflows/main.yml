@@ -120,11 +120,13 @@ jobs:
 
     - name: upload markdown
       uses: actions/upload-artifact@v6
+      if: always()
       with:
        name: result
        path: |
         Update-AUPackages.md
         Update-History.md
+        update_info.xml
 
     - name: calculate logs location
       if: always()
