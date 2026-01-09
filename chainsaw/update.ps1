@@ -29,7 +29,7 @@ function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLa
 
 function global:au_GetLatest {
     Write-Host "Chainsaw: Before WebRequest"
-    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = Invoke-WebRequest -Uri $releases -Verbose -ConnectionTimeoutSeconds 20 -MaximumRetryCount 3 -RetryIntervalSec 5 -OperationTimeoutSeconds 10 
     Write-Host "Chainsaw: After WebRequest"
 
     $re  = "apache-chainsaw-.*.zip"
