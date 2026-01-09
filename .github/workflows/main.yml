@@ -92,6 +92,8 @@ jobs:
         $ErrorActionPreference = 'Continue'
         $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
+        Get-Help Invoke-WebRequest
+
         if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
 
         if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
