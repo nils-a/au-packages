@@ -6,8 +6,8 @@ $target = Join-Path -Path $toolsDir -ChildPath 'sbom-tool-win-x64.exe'
 $packageArgs = @{
     packageName   = $env:ChocolateyPackageName
     fileFullPath  = $target
-    url           = 'https://github.com/microsoft/sbom-tool/releases/download/v2.2.3/sbom-tool-win-x64.exe'
-    checksum      = '7EB333402C7F4F80CEEE28D9D3DD70571BB52F03AD14859AAD83A4476CF93C62'
+    url           = 'https://github.com/microsoft/sbom-tool/releases/download/v4.0.2/sbom-tool-win-x64.exe'
+    checksum      = '3FE29379138A43BF99A076AD1E60EFE6C0DFA1EEB0933141EF751EE77ADBDBD7'
     checksumType  = 'sha256'
 }
 
