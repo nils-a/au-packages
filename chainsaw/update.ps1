@@ -28,6 +28,9 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
 
 function global:au_GetLatest {
+    Write-Warning "Updating chainsaw is currently disabled."
+    return $null
+
     $download_page = Invoke-WebRequest -Uri $releases
 
     $re  = "apache-chainsaw-.*.zip"
@@ -50,4 +53,5 @@ function global:au_GetLatest {
     }
 }
 
-update-package -ChecksumFor none -NoReadme
+Write-Warning "Updating chainsaw is currently disabled."
+#update-package -ChecksumFor none -NoReadme
