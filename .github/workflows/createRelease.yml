@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       commitSha:
-        description: 'Commit SHA'     
+        description: 'Commit SHA'
         required: true
         default: ''
       package:
-        description: 'Package (folder)'  
+        description: 'Package (folder)'
         required: true
         default: ''
       oldVersion:
-        description: 'old version'  
+        description: 'old version'
         required: true
         default: '[no-version]'
 
@@ -35,8 +35,7 @@ jobs:
         git --version
         choco --version
         Get-ChildItem env:* | sort-object name
-        git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
-        Import-Module "$($Env:TEMP)/au/AU/AU.psm1"
+        choco install chocolatey-au -y --no-color --no-progress
 
     - name: do release
       run: |

@@ -12,8 +12,6 @@ on:
   workflow_dispatch:
 
 env:
-  # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
-  au_version: "master"
   au_push: true
   # Force test: use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
@@ -81,14 +79,13 @@ jobs:
         git --version
         choco --version
         Get-ChildItem env:* | sort-object name
-        git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
-        . "$Env:TEMP/au/scripts/Install-AU.ps1" ${env:au_version}
+        choco install chocolatey-au -y --no-color --no-progress
         "Build info"
         '  {0,-20} {1}' -f 'SCHEDULED BUILD:', (${env:APPVEYOR_SCHEDULED_BUILD} -eq 'true')
         '  {0,-20} {1}' -f 'FORCED BUILD:'   , (${env:APPVEYOR_FORCED_BUILD}    -eq 'true')
         '  {0,-20} {1}' -f 'RE BUILD:'       , (${env:APPVEYOR_RE_BUILD}        -eq 'true')
         # Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
-        #  cinst chocolatey-core.extension
+        #  choco install chocolatey-core.extension -y --no-color --no-progress
 
     - name: do update
       run: |
@@ -120,21 +117,30 @@ jobs:
         }
 
         ./update_all.ps1 -ForcedPackages $forced
-        7z a au_temp.zip ${env:TEMP}\chocolatey\au\*
 
-    - name: upload artifacts 1/2
+    - name: upload markdown
       uses: actions/upload-artifact@v6
+      if: always()
       with:
        name: result
        path: |
-        update_info.xml
         Update-AUPackages.md
+        Update-History.md
+        update_info.xml
 
-    - name: upload artifacts 2/2
+    - name: calculate logs location
+      if: always()
+      run: |
+        $au = ([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "chocolatey", "au"))
+        Write-Output "AU_LOGS=$au" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        Write-Host "Logs location: $au"
+
+    - name: upload logs
       uses: actions/upload-artifact@v6
+      if: always()
       with:
-       name: au_temp
-       path: ${env:TEMP}\chocolatey\au\
+       name: AU Logs
+       path: ${{ env.AU_LOGS }}
 
 # notify job ( runs on ubuntu for action-slack-notify )
   notify:
@@ -149,12 +155,12 @@ jobs:
       uses: actions/download-artifact@v7
       with:
         name: result
-    
+
     - name: prepare output
       run: |
         $info = Import-CliXml update_info.xml
         if(!!$info.result.errors.ToString()) {
-          # errors 
+          # errors
           Write-Output "SLACK_ICON_EMOJI=:male-detective:" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
           Write-Output "SLACK_COLOR=#ff0000" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         } elseIf (!!$info.result.pushed.ToString()) {
@@ -169,7 +175,7 @@ jobs:
     - name: notify slack
       uses: rtCamp/action-slack-notify@master
       env:
-        SLACK_ICON: 
+        SLACK_ICON:
         SLACK_USERNAME: 'AU Bot @ github'
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 

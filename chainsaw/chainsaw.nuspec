@@ -4,7 +4,7 @@
     <id>chainsaw</id>
     <packageSourceUrl>https://github.com/nils-a/au-packages</packageSourceUrl>
     <owners>nilsandresen</owners>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <title>Apache Chainsaw</title>
     <authors>Apache Software Foundation</authors>
     <copyright>2002-2018</copyright>
@@ -14,7 +14,7 @@
     <description>Chainsaw v2 is a companion application to Log4j written by members of the Log4j development community. Like a number of Open Source projects, this new version was built upon inspirations, ideas and creations of others. Chainsaw v2 has it's roots from the original Chainsaw utility written by Oliver Burn, and with inspiration from the Log Factor 5 utility contributed by ThoughtWorks Inc.
 </description>
     <summary>GUI-based Log viewer.</summary>
-    <releaseNotes>https://logging.apache.org/chainsaw/2.x/changes-report.html#a2.0.0</releaseNotes>
+    <releaseNotes>https://logging.apache.org/chainsaw/2.x/changes-report.html#a2.1.0</releaseNotes>
     <tags>log logging log4j log4net</tags>
   </metadata>
   <files>

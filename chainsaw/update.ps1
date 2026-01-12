@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 . $PSScriptRoot\..\_scripts\all.ps1
 
 $releases    = 'https://logging.apache.org/chainsaw/2.x/download.html'
@@ -45,6 +45,8 @@ function global:au_GetLatest {
     $url = "https://downloads.apache.org/logging/chainsaw/$version/apache-chainsaw-$version-standalone.zip"
 
     Write-Host "download url is $url"
+
+    Write-Host "Chainsaw: update done."
 
     return @{
         URL32        = $url

@@ -1,9 +1,10 @@
-[![Update Packages](https://github.com/nils-a/au-packages/workflows/Update%20Packages/badge.svg)](https://github.com/nils-a/au-packages/actions/) 
+[![Update Packages](https://github.com/nils-a/au-packages/workflows/Update%20Packages/badge.svg)](https://github.com/nils-a/au-packages/actions/)
 [![Update status](https://img.shields.io/badge/status-gist-green?style=flat&logo=github)](https://gist.github.com/nils-a/be944da6cbb50300f2e3114bf35724a0)
 [![nilsandresen](https://img.shields.io/badge/chocolatey-nilsandresen-green?style=flat&logo=Chocolatey)](https://chocolatey.org/profiles/nilsandresen)
 
 
-This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).  
+This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).
+
 The repository is setup so that you can manage your packages entirely from the GitHub web interface (using AppVeyor to update and push packages) and/or using the local repository copy.
 
 ## Prerequisites
@@ -11,13 +12,13 @@ The repository is setup so that you can manage your packages entirely from the G
 To run locally you will need:
 
 - Powershell 5+.
-- [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au): `Install-Module au` or `cinst au`.
+- [Chocolatey Automatic Package Updater Module](https://github.com/chocolatey-community/chocolatey-au): `Install-Module chocolatey-au` or `choco install chocolatey-au`.
 
-In order to setup AppVeyor update runner please take a look at the AU wiki [AppVeyor section](https://github.com/majkinetor/au/wiki/AppVeyor).
+In order to setup AppVeyor update runner please take a look at the AU wiki [AppVeyor section](https://github.com/chocolatey-community/chocolatey-au/wiki/AppVeyor).
 
 ## Create a package
 
-To create a new package see [Creating the package updater script](https://github.com/majkinetor/au#creating-the-package-updater-script).
+To create a new package see [Creating the package updater script](https://github.com/chocolatey-community/chocolatey-au#creating-the-package-updater-script).
 
 ## Testing the package
 
@@ -29,15 +30,15 @@ In a package directory run: `Test-Package`. This function can be used to start t
 ### Single package
 
 Run from within the directory of the package to update that package:
-   
+
     cd <package_dir>
     ./update.ps1
- 
-If this script is missing, the package is not automatic.  
+
+If this script is missing, the package is not automatic.
 Set `$au_Force = $true` prior to script call to update the package even if no new version is found.
 
 ### Multiple packages
- 
+
 To update all packages run `./update_all.ps1`. It accepts few options:
 
 ```powershell
@@ -85,9 +86,9 @@ Force update ONLY packages `pkg1` and `pkg2`.
 - `[AU pkg1:ver1 pkg2 non_existent]`  
 Force `pkg1` and use explicit version `ver1`, force `pkg2` and ignore `non_existent`.
 
-To see how versions behave when package update is forced see the [force documentation](https://github.com/majkinetor/au/blob/master/README.md#force-update).
+To see how versions behave when package update is forced see the [force documentation](https://github.com/chocolatey-community/chocolatey-au/blob/master/README.md#force-update).
 
-You can also push manual packages with command `[PUSH pkg1 ... pkgN]`. This works for any package anywhere in the file hierarchy and will not invoke AU updater at all. 
+You can also push manual packages with command `[PUSH pkg1 ... pkgN]`. This works for any package anywhere in the file hierarchy and will not invoke AU updater at all.
 
 If there are no changes in the repository use `--allow-empty` git parameter:
 
@@ -101,9 +102,9 @@ To use this system with your own packages do the following steps:
 * Fork this project. If needed, rename it to `au-packages`.
 * Delete all existing packages.
 * Edit the `README.md` header with your repository info.
-* Set your environment variables. See [AU wiki](https://github.com/majkinetor/au/wiki#environment-variables) for details.
+* Set your environment variables. See [AU wiki](https://github.com/chocolatey-community/chocolatey-au/wiki#environment-variables) for details.
 
 Add your own packages now, with this in mind:
 * You can keep both manual and automatic packages together. To get only AU packages any time use `Get-AUPackages` function (alias `lsau` or `gau`)
 * Keep all package additional files in the package directory (icons, screenshots etc.). This keeps everything related to one package in its own directory so it is easy to move it around or remove it.
- 
+
