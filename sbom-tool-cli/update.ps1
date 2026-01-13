@@ -25,8 +25,10 @@ function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 4 -SkipLast 1 }
 
 function global:au_GetLatest {
-    # skip auth on Microsoft - my token does not confirm to their rules.
+    # skip auth on Microsoft - my token does not conform to their rules.
     $release = Get-LatestGithubReleases -repoUser microsoft -repoName sbom-tool -skipAuth $true | select -ExpandProperty latest
+    Write-Host "Found latest Version: $($release.Version)"
+    Write-Host "$release"
 
     return @{
         Version      = $release.Version
