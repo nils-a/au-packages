@@ -52,4 +52,4 @@ jobs:
         Write-Host "Info:"
         ConvertTo-Json $info -Depth 50
 
-        ."$((Get-Module Chocolatey-AU).ModuleBase)/Plugins/GitReleases.ps1" -Info $info -ApiToken ${{ secrets.GH_API_KEY }} -releaseType package -Branch "${{ github.event.inputs.commitSha }}"
+        ."$((Get-Command Get-AUPackages).Module.ModuleBase)/Plugins/GitReleases.ps1" -Info $info -ApiToken ${{ secrets.GH_API_KEY }} -releaseType package -Branch "${{ github.event.inputs.commitSha }}"
