@@ -122,11 +122,17 @@ jobs:
       uses: actions/upload-artifact@v6
       if: always()
       with:
-       name: result
+       name: readable results
        path: |
         Update-AUPackages.md
         Update-History.md
-        update_info.xml
+
+    - name: upload update_info.xml for re-use
+      uses: actions/upload-artifact@v6
+      if: always()
+      with:
+       name: update_info
+       path: update_info.xml
 
     - name: calculate logs location
       if: always()
@@ -142,7 +148,7 @@ jobs:
        name: AU Logs
        path: ${{ env.AU_LOGS }}
 
-# notify job ( runs on ubuntu for action-slack-notify )
+# notify job ( runs on ubuntu for action-slack-notify and re-uses the 'update_info' artefact )
   notify:
     runs-on: ubuntu-latest
     defaults:
@@ -154,7 +160,7 @@ jobs:
     - name: download result artefact
       uses: actions/download-artifact@v7
       with:
-        name: result
+        name: update_info
 
     - name: prepare output
       run: |
