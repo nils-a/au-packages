@@ -88,6 +88,7 @@ jobs:
         #  choco install chocolatey-core.extension -y --no-color --no-progress
 
     - name: do update
+      shell: powershell
       run: |
         $ErrorActionPreference = 'Continue'
         $PSDefaultParameterValues['*:Encoding'] = 'utf8'
